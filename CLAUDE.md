@@ -1,0 +1,69 @@
+# 국제학교 전문 과외 — 프로젝트 안내 (이어서 작업용)
+
+## 개요
+- 국제학교 전문 과외 홍보 웹사이트 (정적 사이트, GitHub Pages 호스팅)
+- **라이브 주소:** https://internationaledu.co.kr (HTTPS)
+- **GitHub 저장소:** https://github.com/x26589334-cpu/intl-school-tutoring
+- **상담 전화:** 010-6832-1994
+- **카카오 오픈채팅:** https://open.kakao.com/o/svHm7W8b
+
+## 배포 방법 (수정 → 반영)
+```
+git add .
+git commit -m "메시지"
+git push
+```
+→ 1~2분 후 라이브 사이트에 자동 반영 (GitHub Pages). 캐시 때문에 안 보이면 Ctrl+Shift+R.
+
+## 파일 구조
+- `index.html` — 홈 (히어로 / 선생님 소개(#about) / 강사진 슬라이드(#teachers) / 진학안내(#abroad) / 과목(#subjects) / 관리중인학교 바로가기 / 후기 바로가기 / 성적그래프(SVG) / 추천 / 진행과정(#process) / 신청(#apply))
+- `schools.html` — 관리중인 학교 (상단 검색창 + 지역별 그룹 + 해외 국가별 카드)
+- `reviews.html` — 후기 (※ 예시 후기, 실제 후기로 교체 필요)
+- `study.html` — 유학 (※ 예시 상품, 실제 내용으로 교체 필요)
+- `news.html` — 국제학교 뉴스 (블로그 타일 그리드 목록)
+- `news-N.html` — 뉴스 상세 글 (현재 news-1 ~ news-5)
+- `styles.css` — 전 페이지 공용 스타일 (색/폰트 한 곳에서 관리)
+- `form.js` — 신청 폼 처리 → 구글 시트 전송
+- `favicon.svg` — 빨간 원 "I" 마크 / `og-image.png` — 링크 미리보기 이미지
+- `sitemap.xml`, `rss.xml`, `robots.txt` — 검색엔진용
+- `face1~12.png` — 강사 사진(현재 CSS로 숨김, 카드는 텍스트만)
+- `news1~5.jpg` — 뉴스 글 사진
+
+## 상단 메뉴(nav) — 모든 페이지 동일
+홈 · 📌관리중인학교 · 진학안내 · 과목 · 선생님 · 진행과정 · 후기 · 유학 · 뉴스
+(우측 상단 "상담신청" = 전화 자동연결)
+
+## 신청 폼 → 구글 시트
+- `form.js`의 `SHEET_ENDPOINT` 에 구글 Apps Script 웹앱 URL이 들어있음.
+- 신청 시 이름/연락처/학년·학교/과목/메모/페이지가 구글 시트에 자동 기록됨.
+- ⚠️ Apps Script 코드 수정 시 "새 배포" 말고 기존 배포 "버전 업데이트" 해야 URL 유지.
+
+## 검색엔진(SEO) — 완료됨
+- 네이버 서치어드바이저 + 구글 서치콘솔 소유확인 완료 (각 페이지 head에 verification meta 있음)
+- sitemap.xml, rss.xml 제출 완료, robots.txt 있음
+- 새 페이지 만들면 sitemap.xml(+ 뉴스면 rss.xml)에 추가할 것
+
+## 사진 추가 규칙
+- 사용자가 **바탕화면 \ 국제학교 사진** 폴더에 이미지를 넣어둠.
+- 새 뉴스/사진 요청 시 그 폴더에서 가져와 repo로 복사 후 사용.
+
+## 자주 하는 작업
+### 뉴스 글 추가
+1. `news-N.html` 새로 생성 (기존 news-2.html 복사해 내용/사진/제목 교체)
+2. `news.html` 그리드 맨 위에 `<a class="post">` 카드 추가 (썸네일+날짜·지역+제목+요약)
+3. `sitemap.xml`, `rss.xml`에 새 글 추가
+4. 사진 없으면 글자 썸네일 생성(PowerShell System.Drawing) 또는 .post-thumb 비워두면 파란 그라데이션
+### 학교 카드 추가 → `schools.html`
+### 후기 추가 → `reviews.html`
+
+## 남은 TODO (실제 내용으로 교체 권장)
+- [ ] reviews.html 후기: 현재 예시 → 실제 후기
+- [ ] study.html 유학 상품: 현재 예시 → 실제 상품/가격
+- [ ] index.html 성적그래프 수치(64.3~91.5), 강사 통계(8~15년 등): 실제 데이터
+- [ ] 강사진 카드: 현재 텍스트만(사진 숨김). 필요시 사진/AI얼굴 복원
+
+## 집/다른 PC에서 이어서 하기
+1. git 설치 (https://git-scm.com)
+2. 원하는 폴더에서: `git clone https://github.com/x26589334-cpu/intl-school-tutoring.git`
+3. 그 폴더에서 Claude Code 실행 → "이 국제학교 사이트 이어서 작업해줘"
+4. 수정 후 `git add . && git commit -m "..." && git push`
