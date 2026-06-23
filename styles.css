@@ -253,6 +253,15 @@
   .backlink a{color:var(--blue);text-decoration:none;font-weight:700;font-size:15px}
   .backlink a:hover{text-decoration:underline}
 
+  /* ===== News / blog ===== */
+  .news{background:var(--bg)}
+  .post{background:#fff;border:1px solid var(--line);border-left:5px solid var(--blue);border-radius:16px;padding:26px 28px;margin-bottom:20px;box-shadow:0 4px 14px rgba(12,42,94,.05)}
+  .post-date{display:inline-block;background:var(--sky);color:var(--navy-2);border-radius:999px;padding:4px 13px;font-size:13px;font-weight:700}
+  .post-title{font-size:20px;color:var(--navy);font-weight:900;margin:12px 0 10px;line-height:1.45}
+  .post-body{font-size:15px;color:var(--ink);line-height:1.85}
+  .post-body p{margin-bottom:10px}
+  .post-tag{display:inline-block;margin-right:6px;color:var(--blue);font-weight:700;font-size:13px}
+
   /* ===== Footer ===== */
   footer{background:#081a3a;color:#9fb3d6;text-align:center;padding:36px 20px;font-size:13px}
   footer b{color:#fff}
