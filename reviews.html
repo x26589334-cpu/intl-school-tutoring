@@ -108,16 +108,6 @@
 
   <a href="#apply" class="sticky-cta">📞 무료 모의수업 신청하기</a>
 
-  <script>
-    function submitForm(e){
-      e.preventDefault();
-      var name = document.getElementById('name').value.trim();
-      var phone = document.getElementById('phone').value.trim();
-      if(!name || !phone){ alert('이름과 연락처를 입력해 주세요.'); return false; }
-      alert(name + ' 학생, 신청이 접수되었습니다!\n담당자가 곧 연락드리겠습니다. 감사합니다.');
-      e.target.reset();
-      return false;
-    }
-  </script>
+  <script src="form.js"></script>
 </body>
 </html>
