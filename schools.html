@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>관리중인 학교 | 국제학교 전문 과외</title>
-<meta name="description" content="국제학교 전문 과외가 관리 중인 국제학교 목록. 대전외국인학교(TCIS), 채드윅 송도, 서울외국인학교(SFS), 서울국제학교(SIS), 한국외국인학교(KIS), 용산국제학교(YISS), 덜위치 서울, NLCS 제주, BHA, 부산국제외국인학교(BIFS) 등 IB·AP·미국수학(알지브라)·에세이 내신 및 면접/인터뷰·입학준비·입학조건 대비. 매일 업데이트." />
+<meta name="description" content="국제학교 전문 과외가 관리 중인 국제학교 목록. 대전외국인학교(TCIS), 채드윅 송도, 서울외국인학교(SFS), 서울국제학교(SIS), 한국외국인학교(KIS), 용산국제학교(YISS), 덜위치 서울, NLCS 제주, BHA, 부산국제외국인학교(BIFS) 등 국내 국제학교와 미국·캐나다·싱가포르·중국·홍콩·베트남·말레이시아·영국·두바이·일본 해외 국제학교까지 IB·AP·미국수학(알지브라)·에세이 내신 및 면접/인터뷰·입학준비·입학조건 대비. 화상수업 가능. 매일 업데이트." />
 <link rel="icon" href="favicon.svg" type="image/svg+xml" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -47,6 +47,11 @@
   <!-- Managed schools (update daily) -->
   <section class="schools">
     <div class="wrap">
+      <div class="school-search">
+        <input type="text" id="schoolSearch" placeholder="🔍 자녀 학교 이름을 검색하세요 (예: 대전외국인학교, NLCS, SIS)" oninput="filterSchools()" autocomplete="off" />
+        <p class="search-empty" id="searchEmpty">검색 결과가 없습니다. 학교 이름 일부만 입력해 보거나, 아래 카톡·전화로 문의해 주세요!</p>
+      </div>
+
       <!-- ▼▼▼ 학교 카드: 아래 <a class="school-card">...</a> 블록 하나를 복사해서 학교마다 추가하세요 ▼▼▼ -->
 
       <h3 class="block-title">서울 · 수도권</h3>
@@ -179,12 +184,72 @@
         </a>
       </div>
 
-      <h3 class="block-title">해외 · 주재원 자녀 (화상수업)</h3>
+      <h3 class="block-title">해외 국제학교 · 주재원 자녀 (화상수업)</h3>
       <div class="school-grid">
         <a class="school-card" href="#apply">
+          <span class="tag">AP · 미국수학</span>
+          <h3>🇺🇸 미국 국제학교</h3>
+          <p>미국 전역 · 미국식 AP·SAT·미국수학(알지브라)·에세이 화상 내신 관리</p>
+          <span class="more">상담 문의 →</span>
+        </a>
+        <a class="school-card" href="#apply">
+          <span class="tag">IB · 미국식</span>
+          <h3>🇨🇦 캐나다 국제학교</h3>
+          <p>토론토·밴쿠버 등 · 내신·에세이·미국수학 화상 관리</p>
+          <span class="more">상담 문의 →</span>
+        </a>
+        <a class="school-card" href="#apply">
           <span class="tag">IB · AP</span>
-          <h3>해외 국제학교 (싱가포르·중국·베트남 등)</h3>
-          <p>주재원 자녀 · 현지 시차 맞춤 화상수업으로 IB·AP·IGCSE 내신 관리</p>
+          <h3>🇸🇬 싱가포르 국제학교</h3>
+          <p>SAS·UWC 등 주재원 자녀 · IB·AP 화상 내신 관리</p>
+          <span class="more">상담 문의 →</span>
+        </a>
+        <a class="school-card" href="#apply">
+          <span class="tag">IB · 영국계</span>
+          <h3>🇨🇳 중국 국제학교</h3>
+          <p>상하이·베이징 주재원 자녀 · IB·영국계 화상 관리</p>
+          <span class="more">상담 문의 →</span>
+        </a>
+        <a class="school-card" href="#apply">
+          <span class="tag">IB · IGCSE</span>
+          <h3>🇭🇰 홍콩 국제학교</h3>
+          <p>홍콩 주재원 자녀 · IB·IGCSE 화상 내신 관리</p>
+          <span class="more">상담 문의 →</span>
+        </a>
+        <a class="school-card" href="#apply">
+          <span class="tag">IB · 미국식</span>
+          <h3>🇻🇳 베트남 국제학교</h3>
+          <p>호치민·하노이 주재원 자녀 · IB·미국식 화상 관리</p>
+          <span class="more">상담 문의 →</span>
+        </a>
+        <a class="school-card" href="#apply">
+          <span class="tag">IGCSE · A-Level</span>
+          <h3>🇲🇾 말레이시아 국제학교</h3>
+          <p>쿠알라룸푸르 등 · 영국계 IGCSE·A-Level 화상 관리</p>
+          <span class="more">상담 문의 →</span>
+        </a>
+        <a class="school-card" href="#apply">
+          <span class="tag">IGCSE · A-Level</span>
+          <h3>🇬🇧 영국 보딩스쿨</h3>
+          <p>런던·보딩스쿨 · IGCSE·A-Level·에세이 화상 관리</p>
+          <span class="more">상담 문의 →</span>
+        </a>
+        <a class="school-card" href="#apply">
+          <span class="tag">IB · 영국계</span>
+          <h3>🇦🇪 두바이(UAE) 국제학교</h3>
+          <p>중동 주재원 자녀 · IB·영국계 화상 내신 관리</p>
+          <span class="more">상담 문의 →</span>
+        </a>
+        <a class="school-card" href="#apply">
+          <span class="tag">IB · 미국식</span>
+          <h3>🇯🇵 일본 국제학교</h3>
+          <p>도쿄 등 주재원 자녀 · IB·미국식 화상 관리</p>
+          <span class="more">상담 문의 →</span>
+        </a>
+        <a class="school-card" href="#apply">
+          <span class="tag">미국식 · IB</span>
+          <h3>🇮🇩 인도네시아 국제학교</h3>
+          <p>자카르타 주재원 자녀 · 미국식·IB 화상 관리</p>
           <span class="more">상담 문의 →</span>
         </a>
       </div>
@@ -236,11 +301,27 @@
   <a href="#apply" class="sticky-cta">📞 무료 모의수업 신청하기</a>
 
   <!-- KakaoTalk consultation floating button -->
-  <a class="kakao-fab" href="https://open.kakao.com/o/svHm7W8b" target="_blank" rel="noopener" aria-label="카카오톡 오픈채팅 상담">
-    <span class="lbl">카톡 상담</span>
-    <svg viewBox="0 0 24 24" fill="#3C1E1E" aria-hidden="true"><path d="M12 3C6.49 3 2 6.58 2 11c0 2.83 1.92 5.32 4.79 6.74-.21.77-.76 2.78-.87 3.21-.14.54.2.53.41.39.17-.11 2.65-1.8 3.72-2.53.63.09 1.28.14 1.95.14 5.51 0 10-3.58 10-8S17.51 3 12 3z"/></svg>
-  </a>
+  <a class="kakao-fab" href="https://open.kakao.com/o/svHm7W8b" target="_blank" rel="noopener" aria-label="카카오톡 오픈채팅 상담">💬 카톡 상담</a>
 
   <script src="form.js"></script>
+  <script>
+    function filterSchools(){
+      var q = document.getElementById('schoolSearch').value.trim().toLowerCase();
+      var total = 0;
+      document.querySelectorAll('.school-card').forEach(function(c){
+        var match = !q || c.textContent.toLowerCase().indexOf(q) !== -1;
+        c.style.display = match ? '' : 'none';
+        if(match) total++;
+      });
+      document.querySelectorAll('.schools .school-grid').forEach(function(grid){
+        var vis = 0;
+        grid.querySelectorAll('.school-card').forEach(function(c){ if(c.style.display !== 'none') vis++; });
+        grid.style.display = vis ? '' : 'none';
+        var title = grid.previousElementSibling;
+        if(title && title.classList.contains('block-title')) title.style.display = vis ? '' : 'none';
+      });
+      document.getElementById('searchEmpty').style.display = total ? 'none' : 'block';
+    }
+  </script>
 </body>
 </html>
