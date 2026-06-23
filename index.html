@@ -468,16 +468,13 @@
 
   <script src="form.js"></script>
   <script>
-    function scrollTeachers(dir){
-      var t=document.getElementById('teacherTrack');
-      if(t) t.scrollBy({left:dir*268,behavior:'smooth'});
-    }
     (function(){
       var track=document.getElementById('teacherTrack');
       if(!track) return;
       var paused=false, resumeTimer, down=false, startX=0, startLeft=0;
       function pause(){ paused=true; clearTimeout(resumeTimer); }
-      function resumeSoon(){ clearTimeout(resumeTimer); resumeTimer=setTimeout(function(){ paused=false; },3500); }
+      function resumeSoon(){ clearTimeout(resumeTimer); resumeTimer=setTimeout(function(){ paused=false; },4000); }
+      window.scrollTeachers=function(dir){ pause(); track.scrollBy({left:dir*268,behavior:'smooth'}); resumeSoon(); };
       track.addEventListener('mouseenter',pause);
       track.addEventListener('mouseleave',function(){ if(!down) paused=false; });
       track.addEventListener('touchstart',pause,{passive:true});
