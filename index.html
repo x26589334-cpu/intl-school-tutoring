@@ -73,6 +73,71 @@
     </div>
   </section>
 
+  <!-- Teachers carousel -->
+  <section class="teachers" id="teachers">
+    <div class="wrap">
+      <span class="eyebrow" style="display:block;text-align:center">TEACHERS</span>
+      <h2 class="sec-title">전문 <span class="hl">강사진</span> 소개</h2>
+      <p class="sec-sub">국제학교 전문 경력 8~15년 이상의 검증된 선생님들입니다. (옆으로 넘겨보세요 →)</p>
+      <div class="teacher-scroller">
+        <div class="teacher-track" id="teacherTrack">
+
+          <!-- ▼▼▼ 강사 카드: 아래 블록 하나를 복사해서 선생님마다 추가하세요. 사진은 <div class="teacher-photo"> 안을 <img src="..."> 로 바꾸면 됩니다 ▼▼▼ -->
+          <div class="teacher-card">
+            <div class="teacher-photo">👩‍🏫</div>
+            <div class="teacher-info">
+              <div class="tname">Alexandra 선생님</div>
+              <span class="tsubj">영어 · 에세이 · 국제학교</span>
+              <ul><li>미국 St. Antonio University 교환학생 · 영문학 졸업</li><li>원어민급 영어 · 어학원 초·중·고 영어 수업 경력</li><li>국제학교 영어·에세이 첨삭·영어토론</li><li>1:1 맞춤 화상수업 (초등~성인)</li></ul>
+            </div>
+          </div>
+          <!-- ▲▲▲ 여기까지가 카드 1개 ▲▲▲ -->
+
+          <div class="teacher-card">
+            <div class="teacher-photo">👩‍🏫</div>
+            <div class="teacher-info">
+              <div class="tname">○○○ 선생님</div>
+              <span class="tsubj">영어 · Essay · SAT</span>
+              <ul><li>영미권 유학 출신 · 경력 10년+</li><li>에세이 첨삭·SAT Writing 전문</li></ul>
+            </div>
+          </div>
+
+          <div class="teacher-card">
+            <div class="teacher-photo">🧑‍🔬</div>
+            <div class="teacher-info">
+              <div class="tname">○○○ 선생님</div>
+              <span class="tsubj">과학 · Physics/Chem/Bio</span>
+              <ul><li>국제학교 과학 전담 · 경력 11년+</li><li>IB·AP 물리·화학·생물 관리</li></ul>
+            </div>
+          </div>
+
+          <div class="teacher-card">
+            <div class="teacher-photo">👨‍🏫</div>
+            <div class="teacher-info">
+              <div class="tname">○○○ 선생님</div>
+              <span class="tsubj">IB 경제 · 경영</span>
+              <ul><li>경력 9년+ · IB DP 전문</li><li>내신·IA·시험 종합 관리</li></ul>
+            </div>
+          </div>
+
+          <div class="teacher-card">
+            <div class="teacher-photo">🧑‍🎓</div>
+            <div class="teacher-info">
+              <div class="tname">○○○ 선생님</div>
+              <span class="tsubj">제2외국어 · 중국어/스페인어</span>
+              <ul><li>경력 8년+ · IGCSE·IB 대비</li><li>중국어 B·스페인어 AB Initio</li></ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="tnav">
+        <button type="button" onclick="scrollTeachers(-1)" aria-label="이전">‹</button>
+        <button type="button" onclick="scrollTeachers(1)" aria-label="다음">›</button>
+      </div>
+    </div>
+  </section>
+
   <!-- Trust -->
   <section class="trust">
     <div class="wrap">
@@ -339,5 +404,29 @@
   <a class="kakao-fab" href="https://open.kakao.com/o/svHm7W8b" target="_blank" rel="noopener" aria-label="카카오톡 오픈채팅 상담">💬 카톡 상담</a>
 
   <script src="form.js"></script>
+  <script>
+    function scrollTeachers(dir){
+      var t=document.getElementById('teacherTrack');
+      if(t) t.scrollBy({left:dir*268,behavior:'smooth'});
+    }
+    (function(){
+      var track=document.getElementById('teacherTrack');
+      if(!track) return;
+      var paused=false, resumeTimer;
+      function pause(){ paused=true; clearTimeout(resumeTimer); }
+      function resumeSoon(){ clearTimeout(resumeTimer); resumeTimer=setTimeout(function(){ paused=false; },3000); }
+      track.addEventListener('mouseenter',pause);
+      track.addEventListener('mouseleave',function(){ paused=false; });
+      track.addEventListener('touchstart',pause,{passive:true});
+      track.addEventListener('touchend',resumeSoon,{passive:true});
+      setInterval(function(){
+        if(paused) return;
+        var max=track.scrollWidth - track.clientWidth;
+        if(max<=0) return;
+        if(track.scrollLeft >= max-1){ track.scrollTo({left:0,behavior:'smooth'}); }
+        else { track.scrollLeft += 1; }
+      },28);
+    })();
+  </script>
 </body>
 </html>
