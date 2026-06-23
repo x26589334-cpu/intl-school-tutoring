@@ -1,7 +1,7 @@
 // ===== 신청 폼 → 구글 시트 연동 =====
 // 아래 따옴표 안에 구글 Apps Script 웹앱 URL을 붙여넣으면 신청이 구글 시트에 자동 저장됩니다.
 // (비어 있으면 안내창만 뜨고 저장은 되지 않습니다.)
-var SHEET_ENDPOINT = "";
+var SHEET_ENDPOINT = "https://script.google.com/macros/s/AKfycby9Hk4hyIMwLzHIEOlzj0nD3H4k-Iioc99zLofqSjnVke7tTCc6TEc0q4kEosMS9e4n/exec";
 
 function submitForm(e){
   e.preventDefault();
