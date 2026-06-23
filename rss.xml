@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+<channel>
+  <title>국제학교 전문 과외 뉴스</title>
+  <link>https://internationaledu.co.kr/news.html</link>
+  <description>국제학교 수업 에피소드와 입시·유학 소식을 매일 전합니다.</description>
+  <language>ko</language>
+  <item>
+    <title>대전 국제학교 입학 준비 및 공부 준비 방법</title>
+    <link>https://internationaledu.co.kr/news-2.html</link>
+    <description>대전 국제학교 입학(에세이·면접/인터뷰) 준비부터 알지브라·지오메트리·IB 수학과외·영어과외 내신 관리까지 정리했습니다.</description>
+    <pubDate>23 Jun 2026 09:00:00 +0900</pubDate>
+    <guid>https://internationaledu.co.kr/news-2.html</guid>
+  </item>
+  <item>
+    <title>[수업 에피소드] IB 수학, 알지브라 기초부터 잡으니 내신이 달라졌어요</title>
+    <link>https://internationaledu.co.kr/news-1.html</link>
+    <description>국제학교 IB 수학 1:1 수업 기록. 기초부터 다시 잡아 한 학기 만에 내신이 올랐습니다.</description>
+    <pubDate>23 Jun 2026 08:00:00 +0900</pubDate>
+    <guid>https://internationaledu.co.kr/news-1.html</guid>
+  </item>
+</channel>
+</rss>
