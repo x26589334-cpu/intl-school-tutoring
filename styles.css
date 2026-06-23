@@ -230,9 +230,35 @@
     background:var(--red);color:#fff;text-align:center;padding:14px;font-weight:700;
     text-decoration:none;font-size:16px;box-shadow:0 -4px 20px rgba(0,0,0,.2);
   }
+
+  /* ===== KakaoTalk floating button ===== */
+  .kakao-fab{
+    position:fixed;right:20px;bottom:24px;z-index:70;
+    width:62px;height:62px;border-radius:50%;background:#FAE100;
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 6px 20px rgba(0,0,0,.25);text-decoration:none;
+    transition:transform .15s ease,box-shadow .15s ease;
+    animation:kakaoPulse 2.2s ease-in-out infinite;
+  }
+  .kakao-fab:hover{transform:scale(1.08)}
+  .kakao-fab svg{width:32px;height:32px}
+  .kakao-fab .lbl{
+    position:absolute;right:72px;background:#3C1E1E;color:#fff;
+    font-size:13px;font-weight:700;padding:7px 12px;border-radius:8px;white-space:nowrap;
+    box-shadow:0 4px 12px rgba(0,0,0,.18);
+  }
+  .kakao-fab .lbl::after{content:"";position:absolute;right:-5px;top:50%;transform:translateY(-50%);border:5px solid transparent;border-left-color:#3C1E1E}
+  @keyframes kakaoPulse{
+    0%,100%{box-shadow:0 6px 20px rgba(0,0,0,.25),0 0 0 0 rgba(250,225,0,.6)}
+    50%{box-shadow:0 6px 20px rgba(0,0,0,.25),0 0 0 12px rgba(250,225,0,0)}
+  }
+
   @media (max-width:640px){
     .topbar .tel a{font-size:14px}
     .sticky-cta{display:block}
     body{padding-bottom:54px}
     .step{flex-direction:row}
+    .kakao-fab{bottom:66px;right:16px;width:56px;height:56px}
+    .kakao-fab svg{width:29px;height:29px}
+    .kakao-fab .lbl{display:none}
   }
