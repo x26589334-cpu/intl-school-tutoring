@@ -25,7 +25,7 @@
     --shadow:0 10px 30px rgba(12,42,94,.12);
   }
   *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
+  html{scroll-behavior:smooth;scroll-padding-top:118px}
   body{
     font-family:'Noto Sans KR',system-ui,sans-serif;
     color:var(--ink);
@@ -56,6 +56,15 @@
   .topbar .tel{display:flex;align-items:center;gap:8px;font-weight:700}
   .topbar .tel a{color:#fff;text-decoration:none;font-size:16px}
   .topbar .tel .dot{width:8px;height:8px;border-radius:50%;background:#37d67a;box-shadow:0 0 0 4px rgba(55,214,122,.25)}
+
+  /* ===== Category nav ===== */
+  .nav{position:sticky;top:60px;z-index:49;background:#fff;border-bottom:1px solid var(--line);box-shadow:0 2px 10px rgba(12,42,94,.05)}
+  .nav .wrap{display:flex;gap:6px;overflow-x:auto;height:52px;align-items:center;-ms-overflow-style:none;scrollbar-width:none}
+  .nav .wrap::-webkit-scrollbar{display:none}
+  .nav a{flex:0 0 auto;color:var(--navy);text-decoration:none;font-weight:700;font-size:14.5px;padding:8px 14px;border-radius:999px;white-space:nowrap;transition:background .15s,color .15s}
+  .nav a:hover{background:var(--sky)}
+  .nav a.featured{background:var(--red);color:#fff}
+  .nav a.featured:hover{background:#c81f2f}
 
   /* ===== Hero ===== */
   .hero{
@@ -181,6 +190,34 @@
   .form .btn{width:100%;justify-content:center;margin-top:22px}
   .form .note{font-size:12px;color:var(--muted);margin-top:12px;text-align:center}
 
+  /* ===== Study abroad / destinations ===== */
+  .abroad{background:var(--white)}
+  .path-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-top:38px}
+  .path{background:var(--sky);border:1px solid #d7e6ff;border-radius:var(--radius);padding:26px 22px;text-align:center}
+  .path .ic{font-size:34px}
+  .path h3{color:var(--navy);font-size:17px;margin:10px 0 6px}
+  .path p{font-size:14px;color:var(--muted)}
+  .block-title{text-align:center;font-size:19px;color:var(--navy);font-weight:900;margin:48px 0 22px}
+  .country-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:14px}
+  .country{background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+  .country b{display:block;color:var(--navy);font-size:15.5px;margin-bottom:4px}
+  .country span{font-size:13px;color:var(--muted)}
+  .hl-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;margin-top:36px}
+  .hl-card{background:linear-gradient(135deg,var(--navy),var(--navy-2));color:#fff;border-radius:var(--radius);padding:28px}
+  .hl-card h3{font-size:18px;margin-bottom:10px;color:#fff}
+  .hl-card p{font-size:14.5px;color:#d7e3f7}
+  .hl-card b{color:var(--gold)}
+
+  /* ===== Managed schools ===== */
+  .schools{background:var(--bg)}
+  .school-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:38px}
+  .school-card{display:block;background:#fff;border:1px solid var(--line);border-top:4px solid var(--blue);border-radius:16px;padding:22px;text-decoration:none;color:inherit;box-shadow:0 4px 14px rgba(12,42,94,.05);transition:transform .15s,box-shadow .15s}
+  .school-card:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(12,42,94,.12)}
+  .school-card .tag{display:inline-block;background:var(--sky);color:var(--navy-2);border:1px solid #cfe0ff;border-radius:999px;padding:3px 11px;font-size:12px;font-weight:700}
+  .school-card h3{color:var(--navy);font-size:17px;margin:12px 0 8px;line-height:1.4}
+  .school-card p{font-size:14px;color:var(--muted);min-height:42px}
+  .school-card .more{display:inline-block;margin-top:10px;color:var(--blue);font-weight:700;font-size:13.5px}
+
   /* ===== Footer ===== */
   footer{background:#081a3a;color:#9fb3d6;text-align:center;padding:36px 20px;font-size:13px}
   footer b{color:#fff}
@@ -209,8 +246,22 @@
     </div>
   </div>
 
+  <!-- Category nav -->
+  <nav class="nav">
+    <div class="wrap">
+      <a href="#top">홈</a>
+      <a href="#schools" class="featured">📌 관리중인 학교</a>
+      <a href="#abroad">진학 안내</a>
+      <a href="#subjects">과목</a>
+      <a href="#about">선생님</a>
+      <a href="#process">진행 과정</a>
+      <a href="#reviews">후기</a>
+      <a href="#apply">무료 신청</a>
+    </div>
+  </nav>
+
   <!-- Hero -->
-  <header class="hero">
+  <header class="hero" id="top">
     <div class="wrap">
       <span class="badge">국내·국외 국제학교 전문</span>
       <h1>국제학교<br><span class="pt">전문 과외</span></h1>
@@ -223,7 +274,7 @@
   </header>
 
   <!-- Features -->
-  <section class="features">
+  <section class="features" id="about">
     <div class="wrap">
       <span class="eyebrow center" style="display:block;text-align:center">ABOUT TEACHERS</span>
       <h2 class="sec-title">이러한 <span class="hl">선생님</span>이 함께합니다</h2>
@@ -251,8 +302,47 @@
     </div>
   </section>
 
+  <!-- Study abroad / destinations -->
+  <section class="abroad" id="abroad">
+    <div class="wrap">
+      <span class="eyebrow" style="display:block;text-align:center">STUDY ABROAD</span>
+      <h2 class="sec-title">국제학교, <span class="hl">주로 어디로 갈까요?</span></h2>
+      <p class="sec-sub">한국 학생들이 국제학교에 다니는 경로는 크게 세 가지입니다.<br>해외에 있든, 국내에 있든, 어떤 커리큘럼이든 1:1로 관리해 드립니다.</p>
+
+      <div class="path-grid">
+        <div class="path"><div class="ic">🌏</div><h3>해외 현지 국제학교</h3><p>유학·조기유학으로 해외 국제학교에 재학 중인 학생</p></div>
+        <div class="path"><div class="ic">🏫</div><h3>국내 국제학교</h3><p>제주·송도·서울 등 국내 국제학교 재학생</p></div>
+        <div class="path"><div class="ic">💻</div><h3>화상(온라인) 수업</h3><p>전 세계 어디서든 한국 강사진과 1:1 화상 수업</p></div>
+      </div>
+
+      <h3 class="block-title">한국 학생들이 많이 가는 국가</h3>
+      <div class="country-grid">
+        <div class="country"><b>🇸🇬 싱가포르</b><span>주재원 자녀 多 · 영미·IB 커리큘럼</span></div>
+        <div class="country"><b>🇲🇾 말레이시아</b><span>국제학교 150곳+ · 합리적 학비로 인기</span></div>
+        <div class="country"><b>🇺🇸 미국</b><span>AP·미국 내신 중심</span></div>
+        <div class="country"><b>🇬🇧 영국</b><span>IGCSE·A-Level·보딩스쿨</span></div>
+        <div class="country"><b>🇨🇳 중국·홍콩</b><span>주재원 자녀 多 · IB·영국계</span></div>
+        <div class="country"><b>🇻🇳 베트남</b><span>호치민·하노이 주재원 자녀</span></div>
+        <div class="country"><b>🇦🇪 두바이(UAE)</b><span>중동 주재원 자녀 거점</span></div>
+        <div class="country"><b>🇨🇦 캐나다</b><span>유학·이민 가정</span></div>
+        <div class="country"><b>🇰🇷 한국(제주·송도 등)</b><span>NLCS·BHA·KIS·채드윅 등</span></div>
+      </div>
+
+      <div class="hl-grid">
+        <div class="hl-card">
+          <h3>👨‍👩‍👧 주재원 자녀도 걱정 마세요</h3>
+          <p>부모님 해외 발령으로 갑자기 현지 국제학교에 진학하면, 영어 수업·낯선 커리큘럼·내신 관리가 큰 부담입니다. 한국 강사진이 현지 진도와 시험에 맞춰 <b>1:1 화상 수업</b>으로 빠르게 따라잡도록 도와드립니다.</p>
+        </div>
+        <div class="hl-card">
+          <h3>💻 화상수업으로 전 세계 어디서나</h3>
+          <p>해외에 있어도, 가까운 곳에 전문 강사가 없어도 괜찮습니다. <b>현지 시차에 맞춘 화상 수업</b>으로 IB·AP·IGCSE 내신과 시험을 국내와 동일하게 관리받을 수 있습니다.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Subjects -->
-  <section class="subjects">
+  <section class="subjects" id="subjects">
     <div class="wrap">
       <span class="eyebrow" style="display:block;text-align:center">SUBJECTS</span>
       <h2 class="sec-title">국제학교 <span class="hl">과목</span></h2>
@@ -286,6 +376,63 @@
     </div>
   </section>
 
+  <!-- Managed schools (update daily) -->
+  <section class="schools" id="schools">
+    <div class="wrap">
+      <span class="eyebrow" style="display:block;text-align:center">MANAGED SCHOOLS</span>
+      <h2 class="sec-title">📌 관리중인 <span class="hl">학교</span></h2>
+      <p class="sec-sub">현재 저희가 수업·내신을 관리하고 있는 국제학교입니다. 학교 이름으로 검색해 보세요. (매일 업데이트)</p>
+
+      <div class="school-grid">
+
+        <!-- ▼▼▼ 학교 카드: 아래 블록 하나를 통째로 복사해서 학교마다 추가하세요 ▼▼▼ -->
+        <a class="school-card" href="#apply">
+          <span class="tag">IB</span>
+          <h3>채드윅 송도국제학교 (Chadwick International)</h3>
+          <p>인천 송도 · IB(PYP·MYP·DP) · 수학·과학·영어 내신 관리</p>
+          <span class="more">상담 문의 →</span>
+        </a>
+        <!-- ▲▲▲ 여기까지가 카드 1개 ▲▲▲ -->
+
+        <a class="school-card" href="#apply">
+          <span class="tag">IB · A-Level</span>
+          <h3>NLCS Jeju (제주)</h3>
+          <p>제주 영어교육도시 · 영국계 · IGCSE·A-Level·IB 대비</p>
+          <span class="more">상담 문의 →</span>
+        </a>
+
+        <a class="school-card" href="#apply">
+          <span class="tag">IB</span>
+          <h3>브랭섬홀아시아 (BHA, 제주)</h3>
+          <p>제주 영어교육도시 · IB 전 과정 · 내신·시험 관리</p>
+          <span class="more">상담 문의 →</span>
+        </a>
+
+        <a class="school-card" href="#apply">
+          <span class="tag">AP</span>
+          <h3>KIS 제주 (한국국제학교)</h3>
+          <p>제주 영어교육도시 · 미국식 AP 커리큘럼</p>
+          <span class="more">상담 문의 →</span>
+        </a>
+
+        <a class="school-card" href="#apply">
+          <span class="tag">AP</span>
+          <h3>서울외국인학교 (SFS)</h3>
+          <p>서울 · 미국식 커리큘럼 · AP·미국 내신 관리</p>
+          <span class="more">상담 문의 →</span>
+        </a>
+
+        <a class="school-card" href="#apply">
+          <span class="tag">IB · AP</span>
+          <h3>싱가포르 국제학교 (SAS·UWC 등)</h3>
+          <p>싱가포르 주재원 자녀 · 화상수업으로 내신 관리</p>
+          <span class="more">상담 문의 →</span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
   <!-- Specialty / ranking -->
   <section class="rank">
     <div class="wrap">
@@ -303,7 +450,7 @@
   </section>
 
   <!-- Reviews -->
-  <section class="reviews">
+  <section class="reviews" id="reviews">
     <div class="wrap">
       <span class="eyebrow" style="display:block;text-align:center">REVIEWS</span>
       <h2 class="sec-title">학생·학부모 <span class="hl">생생 후기</span></h2>
@@ -348,7 +495,7 @@
   </section>
 
   <!-- Steps -->
-  <section class="steps">
+  <section class="steps" id="process">
     <div class="wrap">
       <span class="eyebrow" style="display:block;text-align:center">PROCESS</span>
       <h2 class="sec-title">국제학교 과외, <span class="hl">어떻게 진행될까요?</span></h2>
