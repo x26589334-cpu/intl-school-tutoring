@@ -112,7 +112,9 @@
   /* ===== Teachers carousel ===== */
   .teachers{background:var(--bg)}
   .teacher-scroller{margin-top:38px}
-  .teacher-track{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 2px 14px;-ms-overflow-style:none;scrollbar-width:none}
+  .teacher-track{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 2px 14px;-ms-overflow-style:none;scrollbar-width:none;cursor:grab;user-select:none}
+  .teacher-track.dragging{cursor:grabbing;scroll-snap-type:none}
+  .teacher-track img{-webkit-user-drag:none}
   .teacher-track::-webkit-scrollbar{display:none}
   .teacher-card{flex:0 0 250px;scroll-snap-align:start;background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 4px 14px rgba(12,42,94,.06)}
   .teacher-photo{height:240px;background:linear-gradient(160deg,#2a6bd4,#0c2a5e);display:grid;place-items:center;font-size:66px}

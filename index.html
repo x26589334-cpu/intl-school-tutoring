@@ -84,7 +84,7 @@
 
           <!-- ▼▼▼ 강사 카드: 사진은 <div class="teacher-photo">🙂</div> 의 이모지를 <img src="face1.png" alt=""> 로 바꾸면 사진이 들어갑니다 ▼▼▼ -->
           <div class="teacher-card">
-            <div class="teacher-photo">👩‍🏫</div>
+            <div class="teacher-photo"><img src="face1.png" alt="Alexandra 선생님" loading="lazy"></div>
             <div class="teacher-info">
               <div class="tname">Alexandra 선생님</div>
               <span class="tsubj">영어 · 에세이 · 국제학교</span>
@@ -94,7 +94,7 @@
           <!-- ▲▲▲ 여기까지가 카드 1개 ▲▲▲ -->
 
           <div class="teacher-card">
-            <div class="teacher-photo">👩‍🏫</div>
+            <div class="teacher-photo"><img src="face2.png" alt="Jin 선생님" loading="lazy"></div>
             <div class="teacher-info">
               <div class="tname">Jin 선생님</div>
               <span class="tsubj">영어 · 통번역 · 국제학교</span>
@@ -103,7 +103,7 @@
           </div>
 
           <div class="teacher-card">
-            <div class="teacher-photo">👨‍🏫</div>
+            <div class="teacher-photo"><img src="face3.png" alt="Eric 선생님" loading="lazy"></div>
             <div class="teacher-info">
               <div class="tname">Eric 선생님</div>
               <span class="tsubj">영어회화 · 인터뷰 · 국제학교</span>
@@ -112,7 +112,7 @@
           </div>
 
           <div class="teacher-card">
-            <div class="teacher-photo">👩‍🏫</div>
+            <div class="teacher-photo"><img src="face4.png" alt="강유진 선생님" loading="lazy"></div>
             <div class="teacher-info">
               <div class="tname">강유진 선생님</div>
               <span class="tsubj">영어 · 의학/과학 · 유학</span>
@@ -121,7 +121,7 @@
           </div>
 
           <div class="teacher-card">
-            <div class="teacher-photo">👩‍🏫</div>
+            <div class="teacher-photo"><img src="face5.png" alt="May 선생님" loading="lazy"></div>
             <div class="teacher-info">
               <div class="tname">May 선생님</div>
               <span class="tsubj">영어 · 에세이 · 유학</span>
@@ -130,7 +130,7 @@
           </div>
 
           <div class="teacher-card">
-            <div class="teacher-photo">👩‍🏫</div>
+            <div class="teacher-photo"><img src="face6.png" alt="Grace 선생님" loading="lazy"></div>
             <div class="teacher-info">
               <div class="tname">Grace 선생님</div>
               <span class="tsubj">영어 · 회화·발음 · 국제학교</span>
@@ -139,7 +139,7 @@
           </div>
 
           <div class="teacher-card">
-            <div class="teacher-photo">👩‍🏫</div>
+            <div class="teacher-photo"><img src="face7.png" alt="June(Choi) 선생님" loading="lazy"></div>
             <div class="teacher-info">
               <div class="tname">June(Choi) 선생님</div>
               <span class="tsubj">영어 · 비즈니스 회화 · 국제학교</span>
@@ -148,7 +148,7 @@
           </div>
 
           <div class="teacher-card">
-            <div class="teacher-photo">👨‍🏫</div>
+            <div class="teacher-photo"><img src="face8.png" alt="Peace 선생님" loading="lazy"></div>
             <div class="teacher-info">
               <div class="tname">Peace 선생님</div>
               <span class="tsubj">영어 · 회화·파닉스 · 국제학교</span>
@@ -157,7 +157,7 @@
           </div>
 
           <div class="teacher-card">
-            <div class="teacher-photo">👨‍🏫</div>
+            <div class="teacher-photo"><img src="face9.png" alt="Brian 선생님" loading="lazy"></div>
             <div class="teacher-info">
               <div class="tname">Brian 선생님</div>
               <span class="tsubj">영어·수학 · 국제학교</span>
@@ -166,7 +166,7 @@
           </div>
 
           <div class="teacher-card">
-            <div class="teacher-photo">👩‍🏫</div>
+            <div class="teacher-photo"><img src="face10.png" alt="June 선생님" loading="lazy"></div>
             <div class="teacher-info">
               <div class="tname">June 선생님</div>
               <span class="tsubj">영어·수학 · 국제학교 재학</span>
@@ -175,7 +175,7 @@
           </div>
 
           <div class="teacher-card">
-            <div class="teacher-photo">👩‍🏫</div>
+            <div class="teacher-photo"><img src="face11.png" alt="Jenny 선생님" loading="lazy"></div>
             <div class="teacher-info">
               <div class="tname">Jenny 선생님</div>
               <span class="tsubj">영어·수학·과학 · 국제학교</span>
@@ -184,7 +184,7 @@
           </div>
 
           <div class="teacher-card">
-            <div class="teacher-photo">👨‍🏫</div>
+            <div class="teacher-photo"><img src="face12.png" alt="Jay 선생님" loading="lazy"></div>
             <div class="teacher-info">
               <div class="tname">Jay 선생님</div>
               <span class="tsubj">영어·수학·스페인어 · 국제학교</span>
@@ -475,15 +475,20 @@
     (function(){
       var track=document.getElementById('teacherTrack');
       if(!track) return;
-      var paused=false, resumeTimer;
+      var paused=false, resumeTimer, down=false, startX=0, startLeft=0;
       function pause(){ paused=true; clearTimeout(resumeTimer); }
-      function resumeSoon(){ clearTimeout(resumeTimer); resumeTimer=setTimeout(function(){ paused=false; },3000); }
+      function resumeSoon(){ clearTimeout(resumeTimer); resumeTimer=setTimeout(function(){ paused=false; },3500); }
       track.addEventListener('mouseenter',pause);
-      track.addEventListener('mouseleave',function(){ paused=false; });
+      track.addEventListener('mouseleave',function(){ if(!down) paused=false; });
       track.addEventListener('touchstart',pause,{passive:true});
       track.addEventListener('touchend',resumeSoon,{passive:true});
+      // 마우스로 끌어서 넘기기
+      track.addEventListener('mousedown',function(e){ down=true; pause(); startX=e.pageX; startLeft=track.scrollLeft; track.classList.add('dragging'); e.preventDefault(); });
+      window.addEventListener('mousemove',function(e){ if(!down) return; track.scrollLeft=startLeft-(e.pageX-startX); });
+      window.addEventListener('mouseup',function(){ if(!down) return; down=false; track.classList.remove('dragging'); resumeSoon(); });
+      // 자동 슬라이드
       setInterval(function(){
-        if(paused) return;
+        if(paused||down) return;
         var max=track.scrollWidth - track.clientWidth;
         if(max<=0) return;
         if(track.scrollLeft >= max-1){ track.scrollTo({left:0,behavior:'smooth'}); }
