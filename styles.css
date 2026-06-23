@@ -148,12 +148,15 @@
   /* ===== Chart ===== */
   .grades{background:linear-gradient(135deg,#103a85,#1d56b0);color:#fff;text-align:center}
   .grades h2{color:#fff}
-  .chart{display:flex;align-items:flex-end;justify-content:center;gap:22px;height:240px;max-width:520px;margin:44px auto 0}
-  .bar{width:60px;display:flex;flex-direction:column;align-items:center;gap:10px}
-  .bar .col{width:100%;background:linear-gradient(180deg,var(--gold),#f7c869);border-radius:10px 10px 0 0;position:relative;animation:grow 1.1s ease forwards;transform-origin:bottom;transform:scaleY(0)}
-  .bar .col span{position:absolute;top:-26px;left:0;right:0;font-weight:900;color:#fff;font-size:15px}
-  .bar small{color:#cfdcf3;font-size:13px}
-  @keyframes grow{to{transform:scaleY(1)}}
+  .chart-wrap{max-width:580px;margin:42px auto 0;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:22px;padding:26px 22px 18px}
+  .chart-svg{width:100%;height:auto;display:block}
+  .chart-line{stroke-dasharray:600;stroke-dashoffset:600;animation:drawLine 1.9s ease .2s forwards}
+  @keyframes drawLine{to{stroke-dashoffset:0}}
+  .improve-badge{
+    display:inline-flex;align-items:center;gap:8px;margin-top:22px;
+    background:var(--gold);color:#3a2a00;font-weight:800;font-size:15px;
+    padding:11px 22px;border-radius:999px;box-shadow:0 6px 18px rgba(245,181,61,.35);
+  }
 
   /* ===== Recommend ===== */
   .reco{background:var(--bg)}
@@ -218,6 +221,7 @@
   .school-card h3{color:var(--navy);font-size:17px;margin:12px 0 8px;line-height:1.4}
   .school-card p{font-size:14px;color:var(--muted);min-height:42px}
   .school-card .more{display:inline-block;margin-top:10px;color:var(--blue);font-weight:700;font-size:13.5px}
+  .school-card .cities{display:block;margin-top:8px;font-size:12.5px;color:#8a94a3;line-height:1.5}
   .school-search{max-width:560px;margin:0 auto 8px}
   .school-search input{
     width:100%;padding:16px 22px;border:2px solid var(--line);border-radius:999px;
