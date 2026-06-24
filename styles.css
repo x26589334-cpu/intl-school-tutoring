@@ -276,6 +276,9 @@
   .green-cta{display:block;background:#1aa86b;color:#fff;text-align:center;font-weight:800;font-size:18px;padding:18px;border-radius:12px;text-decoration:none;margin-top:28px;box-shadow:0 6px 18px rgba(26,168,107,.3)}
   .green-cta:hover{background:#168a58}
   .back-news{display:inline-block;margin-top:24px;color:var(--blue);font-weight:700;text-decoration:none}
+  .related-links{margin-top:26px;font-size:14.5px;color:var(--muted)}
+  .related-links a{color:var(--blue);font-weight:700;text-decoration:none}
+  .related-links a:hover{text-decoration:underline}
 
 
   /* ===== Footer ===== */
