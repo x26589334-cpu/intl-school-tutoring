@@ -61,8 +61,8 @@ git push
 - 각 글 내용: ① 학교 특징 ② 한국 학생들이 이 학교에 진학하는 이유 ③ 왜 수학과외·영어과외·과학과외가 필요한지 (키워드: 알지브라·지오메트리·AP·IB·에세이·면접/인터뷰·화상수업).
 - 절차: 사진 newsN.jpg 복사 → news-N.html 생성 → news.html 맨 위 카드 추가 → sitemap.xml + rss.xml 추가 → commit/push.
 - **이미 사용한 사진/번호 (중복 금지):**
-  - news1=photo.jpg.png, news2=대전, news3=대구, news4=부산, news5=제주, news6=Dwight Seoul, news7=Phillips Exeter, news8=Harker, news9=Bergen County Academies
-  - 다음 글은 news-10부터. 폴더의 나머지 미국 학교들(Bellaire, Bellevue, Deerfield, Andover, Harvard-Westlake, Lawrenceville, Hotchkiss, Choate, St. Paul's, Lakeside, 각종 public high 등)이 미사용.
+  - news1=photo.jpg.png, news2=대전, news3=대구, news4=부산, news5=제주, news6=Dwight Seoul, news7=Phillips Exeter, news8=Harker, news9=Bergen County Academies, news10=Phillips Academy Andover, news11=Deerfield, news12=Lawrenceville
+  - 다음 글은 news-13부터. 폴더의 나머지 미국 학교들(Bellaire, Bellevue, Harvard-Westlake, Hotchkiss, Choate, St. Paul's, Lakeside, Harker 외 각종 public high, Chadwick School 등)이 미사용.
 
 ## 남은 TODO (실제 내용으로 교체 권장)
 - [ ] reviews.html 후기: 현재 예시 → 실제 후기
