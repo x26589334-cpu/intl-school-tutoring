@@ -68,8 +68,9 @@ git push
 - **이미 사용한 사진/번호 (중복 금지):**
   - news1=photo.jpg.png, news2=대전, news3=대구, news4=부산, news5=제주, news6=Dwight Seoul, news7=Phillips Exeter, news8=Harker, news9=Bergen County Academies, news10=Phillips Academy Andover, news11=Deerfield, news12=Lawrenceville
   - news13=Choate, news14=Hotchkiss, news15=Harvard-Westlake, news16=St. Paul's, news17=Lakeside, news18=Chadwick School(미국)
-  - news19=Monta Vista, news20=Tenafly, news21=Mission San Jose (6/28 발행 완료)
-  - 다음 글은 news-22부터. 폴더의 나머지 미국 학교들(St. Paul's, Lakeside, Chadwick School, Fay, Fessenden, Crystal Springs, Bellaire, Bellevue, Monta Vista, Lynbrook, Palo Alto, Mission San Jose, Tenafly, 각종 public high 등)이 미사용.
+  - news19=Monta Vista, news20=Tenafly, news21=Mission San Jose (6/28)
+  - news22=Thomas Jefferson 과학고, news23=Lynbrook, news24=Fort Lee (6/29)
+  - 다음 글은 news-25부터. 폴더의 나머지 미국 학교들(St. Paul's, Lakeside, Chadwick School, Fay, Fessenden, Crystal Springs, Bellaire, Bellevue, Monta Vista, Lynbrook, Palo Alto, Mission San Jose, Tenafly, 각종 public high 등)이 미사용.
 
 ## 남은 TODO (실제 내용으로 교체 권장)
 - [ ] reviews.html 후기: 현재 예시 → 실제 후기
