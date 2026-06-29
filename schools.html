@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>관리중인 학교 | 국제학교 전문 과외</title>
-<meta name="description" content="국제학교 전문 과외가 관리 중인 국제학교 목록. 대전외국인학교(TCIS), 채드윅 송도, 서울외국인학교(SFS), 서울국제학교(SIS), 한국외국인학교(KIS), 용산국제학교(YISS), 덜위치 서울, NLCS 제주, BHA, 부산국제외국인학교(BIFS) 등 국내 국제학교와 미국·캐나다·싱가포르·중국·홍콩·베트남·말레이시아·영국·두바이·일본 해외 국제학교까지 IB·AP·미국수학(알지브라)·에세이 내신 및 면접/인터뷰·입학준비·입학조건 대비. 화상수업 가능. 매일 업데이트." />
+<title>관리중인 학교 | 나도 국제학교</title>
+<meta name="description" content="나도 국제학교가 관리하는 국내·해외 국제학교 안내. 학교를 검색하면 학교 특징과 수학(알지브라)·영어 과외 준비법, 입학(에세이·면접) 준비법을 안내합니다. IB·AP·IGCSE 내신, 주재원 자녀 화상수업." />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="나도 국제학교" />
-<meta property="og:title" content="관리중인 학교 | 국제학교 전문 과외" />
-<meta property="og:description" content="대전외국인학교·채드윅 송도·NLCS 제주·SFS 등 국내외 국제학교 내신·입학 관리. 학교 이름으로 검색해 보세요." />
+<meta property="og:title" content="관리중인 학교 | 나도 국제학교" />
+<meta property="og:description" content="국내·해외 국제학교 검색 — 학교 특징과 수학·영어 과외 준비법, 입학 준비법 안내." />
 <meta property="og:image" content="https://internationaledu.co.kr/og-image.png?v=3" />
 <meta property="og:url" content="https://internationaledu.co.kr/schools.html" />
 <meta name="twitter:card" content="summary_large_image" />
@@ -36,7 +36,6 @@
     <div class="wrap">
       <a href="index.html">홈</a>
       <a href="schools.html" class="featured">📌 관리중인 학교</a>
-      <a href="index.html#abroad">진학 안내</a>
       <a href="index.html#subjects">과목</a>
       <a href="index.html#about">선생님</a>
       <a href="index.html#process">진행 과정</a>
@@ -51,229 +50,74 @@
     <div class="wrap">
       <span class="eyebrow">MANAGED SCHOOLS</span>
       <h1>📌 관리중인 학교</h1>
-      <p>현재 저희가 수업·내신을 관리하고 있는 국제학교입니다. 학교 이름으로 검색해 보세요. (매일 업데이트)</p>
+      <p>현재 수업·내신을 관리하고 있는 국제학교입니다. 학교를 검색하면 특징과 수학·영어 과외 준비법, 입학 준비법을 안내해 드립니다.</p>
     </div>
   </header>
 
-  <!-- Managed schools (update daily) -->
-  <section class="schools">
+  <!-- School finder + 진학 안내 -->
+  <section class="abroad">
     <div class="wrap">
-      <div class="school-search">
-        <input type="text" id="schoolSearch" placeholder="🔍 자녀 학교 이름을 검색하세요 (예: 대전외국인학교, NLCS, SIS)" oninput="filterSchools()" autocomplete="off" />
-        <p class="search-empty" id="searchEmpty">검색 결과가 없습니다. 학교 이름 일부만 입력해 보거나, 아래 카톡·전화로 문의해 주세요!</p>
+
+      <div class="school-finder">
+        <div class="sf-eyebrow">학교별 1:1 맞춤 과외</div>
+        <h3>우리 아이 국제학교 찾기</h3>
+        <p class="sf-desc">학교를 검색·선택하면 학교 특징과 수학(알지브라)·영어 과외 준비법, 입학 준비법을 알려드립니다.</p>
+        <div class="finder-tabs">
+          <button type="button" class="ftab active" id="tabKr" onclick="setSchoolTab('kr')">🇰🇷 한국 국제학교</button>
+          <button type="button" class="ftab" id="tabIntl" onclick="setSchoolTab('intl')">🌏 해외 국제학교 (주재원)</button>
+        </div>
+        <div class="sf-search">
+          <input id="schoolSearch2" type="text" placeholder="🔍 학교 이름 검색 (예: 대전외국인학교)" autocomplete="off" oninput="renderSchoolList()" />
+          <div id="schoolList2" class="sf-dropdown"></div>
+        </div>
+        <div id="schoolDetail" class="school-detail"></div>
       </div>
 
-      <!-- ▼▼▼ 학교 카드: 아래 <a class="school-card">...</a> 블록 하나를 복사해서 학교마다 추가하세요 ▼▼▼ -->
-
-      <h3 class="block-title">서울 · 수도권</h3>
-      <div class="school-grid">
-        <a class="school-card" href="#apply">
-          <span class="tag">IB</span>
-          <h3>채드윅 송도국제학교 (Chadwick International)</h3>
-          <p>인천 송도 · IB(PYP·MYP·DP) · 수학·과학·영어 내신 관리</p>
-          <span class="more">상담 문의 →</span>
-        </a>
-        <a class="school-card" href="#apply">
-          <span class="tag">AP · IB</span>
-          <h3>서울외국인학교 (SFS)</h3>
-          <p>서울 연희동 · 미국식 · AP·미국수학·에세이 내신 관리</p>
-          <span class="more">상담 문의 →</span>
-        </a>
-        <a class="school-card" href="#apply">
-          <span class="tag">AP</span>
-          <h3>서울국제학교 (SIS)</h3>
-          <p>경기 성남 · 미국식 AP · 미국수학(알지브라)·에세이 관리</p>
-          <span class="more">상담 문의 →</span>
-        </a>
-        <a class="school-card" href="#apply">
-          <span class="tag">AP</span>
-          <h3>한국외국인학교 (KIS, 서울·판교)</h3>
-          <p>서울 개포·판교 · 미국식 AP · 내신·SAT 관리</p>
-          <span class="more">상담 문의 →</span>
-        </a>
-        <a class="school-card" href="#apply">
-          <span class="tag">AP</span>
-          <h3>용산국제학교 (YISS)</h3>
-          <p>서울 한남 · 미국식 AP · 미국수학·에세이 내신 관리</p>
-          <span class="more">상담 문의 →</span>
-        </a>
-        <a class="school-card" href="#apply">
-          <span class="tag">IGCSE · A-Level · IB</span>
-          <h3>덜위치칼리지 서울 (Dulwich College Seoul)</h3>
-          <p>서울 서초 · 영국계 · IGCSE·A-Level·IB 대비</p>
-          <span class="more">상담 문의 →</span>
-        </a>
-        <a class="school-card" href="#apply">
-          <span class="tag">IB</span>
-          <h3>드와이트스쿨 서울 (Dwight School Seoul)</h3>
-          <p>서울 강서 · IB 전 과정(PYP·MYP·DP) 내신 관리</p>
-          <span class="more">상담 문의 →</span>
-        </a>
-        <a class="school-card" href="#apply">
-          <span class="tag">AP</span>
-          <h3>아시아퍼시픽국제외국인학교 (APIS)</h3>
-          <p>서울 노원 · 미국식 AP · 미국수학·에세이 관리</p>
-          <span class="more">상담 문의 →</span>
-        </a>
-        <a class="school-card" href="#apply">
-          <span class="tag">AP</span>
-          <h3>청라달튼외국인학교 (Cheongna Dalton School)</h3>
-          <p>인천 청라 · 미국식 달튼플랜·AP 내신 관리</p>
-          <span class="more">상담 문의 →</span>
-        </a>
-        <a class="school-card" href="#apply">
-          <span class="tag">AP · IB</span>
-          <h3>경기수원외국인학교 (GSIS)</h3>
-          <p>경기 수원 · 미국식 · AP·IB 내신 관리</p>
-          <span class="more">상담 문의 →</span>
-        </a>
+      <div class="path-grid">
+        <div class="path"><div class="ic">🌏</div><h3>해외 현지 국제학교</h3><p>유학·조기유학으로 해외 국제학교에 재학 중인 학생</p></div>
+        <div class="path"><div class="ic">🏫</div><h3>국내 국제학교</h3><p>제주·송도·서울 등 국내 국제학교 재학생</p></div>
+        <div class="path"><div class="ic">💻</div><h3>화상(온라인) 수업</h3><p>전 세계 어디서든 한국 강사진과 1:1 화상 수업</p></div>
       </div>
 
-      <h3 class="block-title">대전 · 충청</h3>
-      <div class="school-grid">
-        <a class="school-card" href="#apply">
-          <span class="tag">IB · AP · 미국수학</span>
-          <h3>대전외국인학교 (TCIS)</h3>
-          <p>대전 · IB·미국수학(알지브라)·에세이 내신 관리 · 면접/인터뷰 등 입학준비·입학조건 컨설팅</p>
-          <span class="more">상담 문의 →</span>
-        </a>
+      <h3 class="block-title">학년별 전 과정 관리 (G1~G12)</h3>
+      <p class="sec-sub" style="margin-top:0">국제학교는 보통 <b>G1(초등)부터 G12(고등)</b>까지 운영됩니다. G1·G2·G3·G4·G5·G6·G7·G8·G9·G10·G11·G12 <b>전 학년</b>의 내신·과제·시험을 1:1로 관리해 드립니다.</p>
+      <div class="grade-grid">
+        <span class="grade-chip">G1<span>초1</span></span>
+        <span class="grade-chip">G2<span>초2</span></span>
+        <span class="grade-chip">G3<span>초3</span></span>
+        <span class="grade-chip">G4<span>초4</span></span>
+        <span class="grade-chip">G5<span>초5</span></span>
+        <span class="grade-chip">G6<span>초6</span></span>
+        <span class="grade-chip">G7<span>중1</span></span>
+        <span class="grade-chip">G8<span>중2</span></span>
+        <span class="grade-chip">G9<span>중3</span></span>
+        <span class="grade-chip">G10<span>고1</span></span>
+        <span class="grade-chip">G11<span>고2</span></span>
+        <span class="grade-chip">G12<span>고3</span></span>
       </div>
 
-      <h3 class="block-title">제주 영어교육도시</h3>
-      <div class="school-grid">
-        <a class="school-card" href="#apply">
-          <span class="tag">IGCSE · A-Level · IB</span>
-          <h3>NLCS Jeju (노스런던컬리지에잇스쿨 제주)</h3>
-          <p>제주 영어교육도시 · 영국계 · IGCSE·A-Level·IB 대비</p>
-          <span class="more">상담 문의 →</span>
-        </a>
-        <a class="school-card" href="#apply">
-          <span class="tag">IB</span>
-          <h3>브랭섬홀아시아 (BHA)</h3>
-          <p>제주 영어교육도시 · IB 전 과정 · 내신·시험 관리</p>
-          <span class="more">상담 문의 →</span>
-        </a>
-        <a class="school-card" href="#apply">
-          <span class="tag">AP</span>
-          <h3>KIS 제주 (한국국제학교 제주)</h3>
-          <p>제주 영어교육도시 · 미국식 AP · 미국수학·에세이 관리</p>
-          <span class="more">상담 문의 →</span>
-        </a>
-        <a class="school-card" href="#apply">
-          <span class="tag">AP</span>
-          <h3>SJA Jeju (세인트존스베리아카데미 제주)</h3>
-          <p>제주 영어교육도시 · 미국식 · AP·미국 내신 관리</p>
-          <span class="more">상담 문의 →</span>
-        </a>
+      <h3 class="block-title">한국 학생들이 많이 가는 국가</h3>
+      <div class="country-grid">
+        <div class="country"><b>🇸🇬 싱가포르</b><span>주재원 자녀 多 · 영미·IB 커리큘럼</span></div>
+        <div class="country"><b>🇲🇾 말레이시아</b><span>국제학교 150곳+ · 합리적 학비로 인기</span></div>
+        <div class="country"><b>🇺🇸 미국</b><span>AP·미국 내신 중심</span></div>
+        <div class="country"><b>🇬🇧 영국</b><span>IGCSE·A-Level·보딩스쿨</span></div>
+        <div class="country"><b>🇨🇳 중국·홍콩</b><span>주재원 자녀 多 · IB·영국계</span></div>
+        <div class="country"><b>🇻🇳 베트남</b><span>호치민·하노이 주재원 자녀</span></div>
+        <div class="country"><b>🇦🇪 두바이(UAE)</b><span>중동 주재원 자녀 거점</span></div>
+        <div class="country"><b>🇨🇦 캐나다</b><span>유학·이민 가정</span></div>
+        <div class="country"><b>🇰🇷 한국(제주·송도 등)</b><span>NLCS·BHA·KIS·채드윅 등</span></div>
       </div>
 
-      <h3 class="block-title">부산 · 대구 · 광주</h3>
-      <div class="school-grid">
-        <a class="school-card" href="#apply">
-          <span class="tag">IB</span>
-          <h3>부산국제외국인학교 (BIFS)</h3>
-          <p>부산 기장 · IB 전 과정 · 내신·시험 관리</p>
-          <span class="more">상담 문의 →</span>
-        </a>
-        <a class="school-card" href="#apply">
-          <span class="tag">AP</span>
-          <h3>부산외국인학교 (BFS)</h3>
-          <p>부산 해운대 · 미국식 AP · 미국수학·에세이 관리</p>
-          <span class="more">상담 문의 →</span>
-        </a>
-        <a class="school-card" href="#apply">
-          <span class="tag">AP</span>
-          <h3>대구국제학교 (DIS)</h3>
-          <p>대구 · 미국식 AP · 미국수학(알지브라)·에세이 관리</p>
-          <span class="more">상담 문의 →</span>
-        </a>
-        <a class="school-card" href="#apply">
-          <span class="tag">미국식</span>
-          <h3>광주외국인학교 (GIS)</h3>
-          <p>광주 · 미국식 커리큘럼 · 내신·에세이 관리</p>
-          <span class="more">상담 문의 →</span>
-        </a>
-      </div>
-
-      <h3 class="block-title">해외 국제학교 · 주재원 자녀 (화상수업)</h3>
-      <div class="school-grid">
-        <a class="school-card" href="#apply">
-          <span class="tag">AP · 미국수학</span>
-          <h3>🇺🇸 미국 국제학교</h3>
-          <p>미국 전역 · 미국식 AP·SAT·미국수학(알지브라)·에세이 화상 내신 관리</p>
-          <span class="cities">📍 보스턴·뉴욕·뉴저지·LA·어바인·시애틀·샌프란시스코·시카고·애틀랜타·댈러스·워싱턴DC 등</span>
-          <span class="more">상담 문의 →</span>
-        </a>
-        <a class="school-card" href="#apply">
-          <span class="tag">IB · 미국식</span>
-          <h3>🇨🇦 캐나다 국제학교</h3>
-          <p>내신·에세이·미국수학 화상 관리</p>
-          <span class="cities">📍 토론토·밴쿠버·몬트리올·캘거리·빅토리아 등</span>
-          <span class="more">상담 문의 →</span>
-        </a>
-        <a class="school-card" href="#apply">
-          <span class="tag">IB · AP</span>
-          <h3>🇸🇬 싱가포르 국제학교</h3>
-          <p>SAS·UWC 등 주재원 자녀 · IB·AP 화상 내신 관리</p>
-          <span class="cities">📍 탱글린·도버·우드랜즈 등 싱가포르 전 지역</span>
-          <span class="more">상담 문의 →</span>
-        </a>
-        <a class="school-card" href="#apply">
-          <span class="tag">IB · 영국계</span>
-          <h3>🇨🇳 중국 국제학교</h3>
-          <p>주재원 자녀 · IB·영국계 화상 관리</p>
-          <span class="cities">📍 상하이·베이징·광저우·선전·칭다오·쑤저우·톈진 등</span>
-          <span class="more">상담 문의 →</span>
-        </a>
-        <a class="school-card" href="#apply">
-          <span class="tag">IB · IGCSE</span>
-          <h3>🇭🇰 홍콩 국제학교</h3>
-          <p>홍콩 주재원 자녀 · IB·IGCSE 화상 내신 관리</p>
-          <span class="cities">📍 홍콩섬·카우룽(구룡)·뉴테리토리 등</span>
-          <span class="more">상담 문의 →</span>
-        </a>
-        <a class="school-card" href="#apply">
-          <span class="tag">IB · 미국식</span>
-          <h3>🇻🇳 베트남 국제학교</h3>
-          <p>주재원 자녀 · IB·미국식 화상 관리</p>
-          <span class="cities">📍 호치민·하노이·다낭 등</span>
-          <span class="more">상담 문의 →</span>
-        </a>
-        <a class="school-card" href="#apply">
-          <span class="tag">IGCSE · A-Level</span>
-          <h3>🇲🇾 말레이시아 국제학교</h3>
-          <p>영국계 IGCSE·A-Level 화상 관리</p>
-          <span class="cities">📍 쿠알라룸푸르·조호바루·페낭 등</span>
-          <span class="more">상담 문의 →</span>
-        </a>
-        <a class="school-card" href="#apply">
-          <span class="tag">IGCSE · A-Level</span>
-          <h3>🇬🇧 영국 보딩스쿨</h3>
-          <p>IGCSE·A-Level·에세이 화상 관리</p>
-          <span class="cities">📍 런던·옥스퍼드·케임브리지·브라이튼·아스콧 등</span>
-          <span class="more">상담 문의 →</span>
-        </a>
-        <a class="school-card" href="#apply">
-          <span class="tag">IB · 영국계</span>
-          <h3>🇦🇪 두바이(UAE) 국제학교</h3>
-          <p>중동 주재원 자녀 · IB·영국계 화상 내신 관리</p>
-          <span class="cities">📍 두바이·아부다비 등</span>
-          <span class="more">상담 문의 →</span>
-        </a>
-        <a class="school-card" href="#apply">
-          <span class="tag">IB · 미국식</span>
-          <h3>🇯🇵 일본 국제학교</h3>
-          <p>주재원 자녀 · IB·미국식 화상 관리</p>
-          <span class="cities">📍 도쿄·요코하마·오사카·나고야·고베 등</span>
-          <span class="more">상담 문의 →</span>
-        </a>
-        <a class="school-card" href="#apply">
-          <span class="tag">미국식 · IB</span>
-          <h3>🇮🇩 인도네시아 국제학교</h3>
-          <p>주재원 자녀 · 미국식·IB 화상 관리</p>
-          <span class="cities">📍 자카르타·발리·수라바야 등</span>
-          <span class="more">상담 문의 →</span>
-        </a>
+      <div class="hl-grid">
+        <div class="hl-card">
+          <h3>👨‍👩‍👧 주재원 자녀도 걱정 마세요</h3>
+          <p>부모님 해외 발령으로 갑자기 현지 국제학교에 진학하면, 영어 수업·낯선 커리큘럼·내신 관리가 큰 부담입니다. 한국 강사진이 현지 진도와 시험에 맞춰 <b>1:1 화상 수업</b>으로 빠르게 따라잡도록 도와드립니다.</p>
+        </div>
+        <div class="hl-card">
+          <h3>💻 화상수업으로 전 세계 어디서나</h3>
+          <p>해외에 있어도, 가까운 곳에 전문 강사가 없어도 괜찮습니다. <b>현지 시차에 맞춘 화상 수업</b>으로 IB·AP·IGCSE 내신과 시험을 국내와 동일하게 관리받을 수 있습니다.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -327,23 +171,99 @@
 
   <script src="form.js"></script>
   <script>
-    function filterSchools(){
-      var q = document.getElementById('schoolSearch').value.trim().toLowerCase();
-      var total = 0;
-      document.querySelectorAll('.school-card').forEach(function(c){
-        var match = !q || c.textContent.toLowerCase().indexOf(q) !== -1;
-        c.style.display = match ? '' : 'none';
-        if(match) total++;
-      });
-      document.querySelectorAll('.schools .school-grid').forEach(function(grid){
-        var vis = 0;
-        grid.querySelectorAll('.school-card').forEach(function(c){ if(c.style.display !== 'none') vis++; });
-        grid.style.display = vis ? '' : 'none';
-        var title = grid.previousElementSibling;
-        if(title && title.classList.contains('block-title')) title.style.display = vis ? '' : 'none';
-      });
-      document.getElementById('searchEmpty').style.display = total ? 'none' : 'block';
+    // ===== 국제학교 찾기 (한국 / 해외) =====
+    var KR_SCHOOLS=[
+      {n:"서울외국인학교 (SFS)",r:"서울 서대문구",c:"미국식·AP"},
+      {n:"서울국제학교 (SIS)",r:"경기 성남",c:"미국식·AP"},
+      {n:"한국외국인학교 (KIS) 서울·판교",r:"서울 개포·판교",c:"미국식·AP"},
+      {n:"용산국제학교 (YISS)",r:"서울 한남",c:"미국식·AP"},
+      {n:"덜위치칼리지 서울",r:"서울 서초",c:"영국계·IGCSE·A-Level"},
+      {n:"드와이트 외국인학교 (Dwight School Seoul)",r:"서울 강서",c:"IB"},
+      {n:"아시아퍼시픽국제외국인학교 (APIS)",r:"서울 노원",c:"미국식·AP"},
+      {n:"한국켄트외국인학교 (KKFS)",r:"서울 광진",c:"미국식"},
+      {n:"지구촌기독외국인학교 (GVCS)",r:"서울 양천",c:"미국식"},
+      {n:"채드윅 송도국제학교",r:"인천 송도",c:"IB"},
+      {n:"청라달튼외국인학교",r:"인천 청라",c:"미국식·AP"},
+      {n:"경기수원외국인학교 (GSIS)",r:"경기 수원",c:"미국식·IB"},
+      {n:"대전외국인학교 (TCIS)",r:"대전",c:"미국식·AP·IB"},
+      {n:"NLCS 제주",r:"제주 영어교육도시",c:"영국계·IGCSE·A-Level·IB"},
+      {n:"브랭섬홀아시아 (BHA)",r:"제주 영어교육도시",c:"IB"},
+      {n:"한국국제학교 제주 (KIS Jeju)",r:"제주 영어교육도시",c:"미국식·AP"},
+      {n:"세인트존스베리아카데미 제주 (SJA Jeju)",r:"제주 영어교육도시",c:"미국식"},
+      {n:"부산외국인학교 (BFS)",r:"부산 해운대",c:"미국식·AP"},
+      {n:"부산국제외국인학교 (BIFS)",r:"부산 기장",c:"IB"},
+      {n:"대구국제학교 (DIS)",r:"대구",c:"미국식·AP"},
+      {n:"광주외국인학교 (GIS)",r:"광주",c:"미국식"},
+      {n:"전주화산외국인학교",r:"전북 전주",c:"미국식"},
+      {n:"거제국제외국인학교 (GIFS)",r:"경남 거제",c:"미국식"}
+    ];
+    var INTL_SCHOOLS=[
+      {n:"필립스 엑서터 아카데미",r:"미국 (보딩)",c:"미국식·AP"},
+      {n:"필립스 아카데미 앤도버",r:"미국 (보딩)",c:"미국식·AP"},
+      {n:"하커 스쿨",r:"미국 캘리포니아",c:"미국식·AP"},
+      {n:"토머스제퍼슨 과학고 (TJ)",r:"미국 버지니아",c:"미국식·AP"},
+      {n:"버겐카운티 아카데미",r:"미국 뉴저지",c:"미국식·AP"},
+      {n:"포트리 고등학교",r:"미국 뉴저지",c:"미국식·AP"},
+      {n:"몬타비스타·린브룩·미션산호세 고등학교",r:"미국 캘리포니아",c:"미국식·AP"},
+      {n:"어퍼캐나다칼리지 (UCC)",r:"캐나다 토론토",c:"IB·미국식"},
+      {n:"세인트조지스 스쿨",r:"캐나다 밴쿠버",c:"미국식·AP"},
+      {n:"토론토·밴쿠버 공립(국제학생)",r:"캐나다",c:"미국식"},
+      {n:"시드니 그래머 스쿨",r:"호주 시드니",c:"호주(HSC)·IB"},
+      {n:"멜버른 그래머 스쿨",r:"호주 멜버른",c:"호주(VCE)·IB"},
+      {n:"녹스 그래머 스쿨",r:"호주 시드니",c:"호주·IB"},
+      {n:"오클랜드 그래머 스쿨",r:"뉴질랜드 오클랜드",c:"케임브리지(CIE)"},
+      {n:"킹스 칼리지",r:"뉴질랜드 오클랜드",c:"케임브리지·NCEA"},
+      {n:"아메리칸스쿨 인 재팬 (ASIJ)",r:"일본 도쿄",c:"미국식·AP"},
+      {n:"니시마치 인터내셔널 스쿨",r:"일본 도쿄",c:"미국식"},
+      {n:"요코하마 인터내셔널 스쿨 (YIS)",r:"일본 요코하마",c:"IB"},
+      {n:"상하이 아메리칸 스쿨 (SAS)",r:"중국 상하이",c:"미국식·AP"},
+      {n:"국제학교 베이징 (ISB)",r:"중국 베이징",c:"미국식·IB"},
+      {n:"베이징 BSB (영국계)",r:"중국 베이징",c:"영국계·IB"}
+    ];
+    var _tab='kr', _filtered=[];
+    function _list(){ return _tab==='kr'?KR_SCHOOLS:INTL_SCHOOLS; }
+    function setSchoolTab(t){
+      _tab=t;
+      document.getElementById('tabKr').className='ftab'+(t==='kr'?' active':'');
+      document.getElementById('tabIntl').className='ftab'+(t==='intl'?' active':'');
+      document.getElementById('schoolSearch2').value='';
+      document.getElementById('schoolSearch2').placeholder = (t==='kr') ? '🔍 학교 이름 검색 (예: 대전외국인학교)' : '🔍 학교 이름 검색 (예: 상하이 아메리칸)';
+      document.getElementById('schoolList2').style.display='none';
+      var d=document.getElementById('schoolDetail'); d.className='school-detail'; d.innerHTML='';
     }
+    function renderSchoolList(){
+      var q=document.getElementById('schoolSearch2').value.trim().toLowerCase().replace(/\s/g,'');
+      var box=document.getElementById('schoolList2');
+      if(!q){ box.style.display='none'; box.innerHTML=''; return; }
+      _filtered=_list().filter(function(s){ return s.n.toLowerCase().replace(/\s/g,'').indexOf(q)!==-1; });
+      if(!_filtered.length){ box.innerHTML='<div class="none">검색 결과가 없습니다. 카톡·전화로 문의해 주세요!</div>'; box.style.display='block'; return; }
+      box.innerHTML=_filtered.map(function(s,i){ return '<a href="#" onclick="showSchool('+i+');return false;">'+s.n+' <span style="color:#8a94a3">· '+s.r+'</span></a>'; }).join('');
+      box.style.display='block';
+    }
+    function _curMath(c){
+      if(c.indexOf('A-Level')>=0||c.indexOf('영국')>=0||c.indexOf('케임브리지')>=0) return 'IGCSE·A-Level';
+      if(c.indexOf('IB')>=0) return 'IB';
+      if(c.indexOf('AP')>=0) return 'AP';
+      return '현지 교육과정';
+    }
+    function showSchool(i){
+      var s=_filtered[i]; if(!s) return;
+      var cm=_curMath(s.c);
+      var html=''
+        +'<h4>'+s.n+'</h4>'
+        +'<div class="sd-region">📍 '+s.r+' · '+s.c+'</div>'
+        +'<div class="sd-block"><b>학교 특징</b><p>'+s.n+'은(는) '+s.r+'의 '+s.c+' 국제학교입니다. 수업과 평가가 영어로 진행되고 진도가 빠르기 때문에, 영어 실력과 기초 개념이 탄탄해야 잘 따라갈 수 있습니다.</p></div>'
+        +'<div class="sd-block"><b>수학 과외 준비</b><p>알지브라(Algebra)·지오메트리(Geometry) 기초가 탄탄해야 '+cm+' 수학(프리캘큘러스·캘큘러스 등)으로 자연스럽게 이어집니다. 빈 개념을 1:1 수학과외로 그때그때 채우는 것이 핵심입니다.</p></div>'
+        +'<div class="sd-block"><b>영어 과외 준비</b><p>영어과외로 원서 리딩, 에세이 라이팅·첨삭, 영어 토론을 체계적으로 관리하면 내신과 시험에서 큰 차이가 납니다. 영어가 약한 학생은 적응 단계부터 1:1로 돕습니다.</p></div>'
+        +'<div class="sd-block"><b>입학 준비</b><p>입학은 영어 시험 + 면접(인터뷰) + 에세이가 핵심입니다. 학교별 입학조건에 맞춰 에세이 첨삭과 영어 인터뷰를 1:1로 준비하면 합격 가능성이 높아집니다.</p></div>'
+        +'<a class="sd-cta" href="tel:010-6832-1994">📞 상담받기 010-6832-1994</a>';
+      var d=document.getElementById('schoolDetail'); d.innerHTML=html; d.className='school-detail show';
+      document.getElementById('schoolList2').style.display='none';
+    }
+    document.addEventListener('click',function(e){
+      var inp=document.getElementById('schoolSearch2'), box=document.getElementById('schoolList2');
+      if(box&&inp&&!inp.contains(e.target)&&!box.contains(e.target)){ box.style.display='none'; }
+    });
   </script>
 </body>
 </html>
