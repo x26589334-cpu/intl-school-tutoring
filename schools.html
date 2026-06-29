@@ -67,7 +67,7 @@
           <button type="button" class="ftab" id="tabIntl" onclick="setSchoolTab('intl')">🌏 해외 국제학교 (주재원)</button>
         </div>
         <div class="sf-search">
-          <input id="schoolSearch2" type="text" placeholder="🔍 학교 이름 검색 (예: 대전외국인학교)" autocomplete="off" oninput="renderSchoolList()" />
+          <input id="schoolSearch2" type="text" placeholder="🔍 지역·학교 검색 (예: 서울, 대전외국인학교)" autocomplete="off" oninput="renderSchoolList()" />
           <div id="schoolList2" class="sf-dropdown"></div>
         </div>
         <div id="schoolDetail" class="school-detail"></div>
@@ -227,7 +227,7 @@
       document.getElementById('tabKr').className='ftab'+(t==='kr'?' active':'');
       document.getElementById('tabIntl').className='ftab'+(t==='intl'?' active':'');
       document.getElementById('schoolSearch2').value='';
-      document.getElementById('schoolSearch2').placeholder = (t==='kr') ? '🔍 학교 이름 검색 (예: 대전외국인학교)' : '🔍 학교 이름 검색 (예: 상하이 아메리칸)';
+      document.getElementById('schoolSearch2').placeholder = (t==='kr') ? '🔍 지역·학교 검색 (예: 서울, 대전외국인학교)' : '🔍 국가·학교 검색 (예: 미국, 캐나다, 시드니)';
       document.getElementById('schoolList2').style.display='none';
       var d=document.getElementById('schoolDetail'); d.className='school-detail'; d.innerHTML='';
     }
@@ -235,9 +235,9 @@
       var q=document.getElementById('schoolSearch2').value.trim().toLowerCase().replace(/\s/g,'');
       var box=document.getElementById('schoolList2');
       if(!q){ box.style.display='none'; box.innerHTML=''; return; }
-      _filtered=_list().filter(function(s){ return s.n.toLowerCase().replace(/\s/g,'').indexOf(q)!==-1; });
+      _filtered=_list().filter(function(s){ return (s.r+' '+s.n).toLowerCase().replace(/\s/g,'').indexOf(q)!==-1; });
       if(!_filtered.length){ box.innerHTML='<div class="none">검색 결과가 없습니다. 카톡·전화로 문의해 주세요!</div>'; box.style.display='block'; return; }
-      box.innerHTML=_filtered.map(function(s,i){ return '<a href="#" onclick="showSchool('+i+');return false;">'+s.n+' <span style="color:#8a94a3">· '+s.r+'</span></a>'; }).join('');
+      box.innerHTML=_filtered.map(function(s,i){ return '<a href="#" onclick="showSchool('+i+');return false;"><b style="color:var(--navy)">'+s.r.split(' ')[0]+'</b> · '+s.n+'</a>'; }).join('');
       box.style.display='block';
     }
     function _curMath(c){
