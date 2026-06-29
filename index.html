@@ -247,28 +247,17 @@
 
       <div class="school-finder">
         <div class="sf-eyebrow">학교별 1:1 맞춤 과외</div>
-        <h3>관리 가능한 국제학교</h3>
-        <p class="sf-desc">아래 학교를 비롯해 전 세계 국제학교의 내신·입시를 1:1로 관리합니다.</p>
-
-        <div class="kw-group">국내 국제학교</div>
-        <div class="kw-cloud">
-          <span>대전외국인학교 (TCIS)</span><span>채드윅 송도국제학교</span><span>서울외국인학교 (SFS)</span><span>서울국제학교 (SIS)</span><span>한국외국인학교 (KIS)</span><span>용산국제학교 (YISS)</span><span>덜위치칼리지 서울</span><span>드와이트 외국인학교</span><span>청라달튼외국인학교</span><span>경기수원외국인학교 (GSIS)</span><span>NLCS 제주</span><span>브랭섬홀아시아 (BHA)</span><span>KIS 제주</span><span>SJA 제주</span><span>부산국제외국인학교 (BIFS)</span><span>대구국제학교 (DIS)</span><span>광주외국인학교 (GIS)</span>
+        <h3>우리 아이 국제학교 찾기</h3>
+        <p class="sf-desc">학교를 검색·선택하면 학교 특징과 수학(알지브라)·영어 과외 준비법, 입학 준비법을 알려드립니다.</p>
+        <div class="finder-tabs">
+          <button type="button" class="ftab active" id="tabKr" onclick="setSchoolTab('kr')">🇰🇷 한국 국제학교</button>
+          <button type="button" class="ftab" id="tabIntl" onclick="setSchoolTab('intl')">🌏 해외 국제학교 (주재원)</button>
         </div>
-
-        <div class="kw-group">미국 명문 보딩스쿨</div>
-        <div class="kw-cloud">
-          <span>필립스 엑서터</span><span>필립스 아카데미 앤도버</span><span>디어필드 아카데미</span><span>로렌스빌 스쿨</span><span>초트 로즈메리 홀</span><span>핫치키스 스쿨</span><span>세인트폴스 스쿨</span><span>하버드웨스트레이크</span><span>레이크사이드 스쿨</span><span>하커 스쿨</span><span>채드윅 스쿨</span>
+        <div class="sf-search">
+          <input id="schoolSearch2" type="text" placeholder="🔍 학교 이름 검색 (예: 대전외국인학교)" autocomplete="off" oninput="renderSchoolList()" />
+          <div id="schoolList2" class="sf-dropdown"></div>
         </div>
-
-        <div class="kw-group">미국 명문 고등학교</div>
-        <div class="kw-cloud">
-          <span>토머스제퍼슨 과학고 (TJ)</span><span>버겐카운티 아카데미</span><span>몬타비스타</span><span>린브룩</span><span>미션산호세</span><span>테너플라이</span><span>포트리</span>
-        </div>
-
-        <div class="kw-group">해외 국제학교 (화상수업)</div>
-        <div class="kw-cloud">
-          <span>미국</span><span>캐나다</span><span>싱가포르</span><span>중국</span><span>홍콩</span><span>베트남</span><span>말레이시아</span><span>영국</span><span>두바이(UAE)</span><span>일본</span><span>인도네시아</span>
-        </div>
+        <div id="schoolDetail" class="school-detail"></div>
       </div>
 
       <div class="path-grid">
@@ -534,6 +523,101 @@
   <a class="kakao-fab" href="https://open.kakao.com/o/svHm7W8b" target="_blank" rel="noopener" aria-label="카카오톡 오픈채팅 상담">💬 카톡 상담</a>
 
   <script src="form.js"></script>
+  <script>
+    // ===== 국제학교 찾기 (한국 / 해외) =====
+    var KR_SCHOOLS=[
+      {n:"서울외국인학교 (SFS)",r:"서울 서대문구",c:"미국식·AP"},
+      {n:"서울국제학교 (SIS)",r:"경기 성남",c:"미국식·AP"},
+      {n:"한국외국인학교 (KIS) 서울·판교",r:"서울 개포·판교",c:"미국식·AP"},
+      {n:"용산국제학교 (YISS)",r:"서울 한남",c:"미국식·AP"},
+      {n:"덜위치칼리지 서울",r:"서울 서초",c:"영국계·IGCSE·A-Level"},
+      {n:"드와이트 외국인학교 (Dwight School Seoul)",r:"서울 강서",c:"IB"},
+      {n:"아시아퍼시픽국제외국인학교 (APIS)",r:"서울 노원",c:"미국식·AP"},
+      {n:"한국켄트외국인학교 (KKFS)",r:"서울 광진",c:"미국식"},
+      {n:"지구촌기독외국인학교 (GVCS)",r:"서울 양천",c:"미국식"},
+      {n:"채드윅 송도국제학교",r:"인천 송도",c:"IB"},
+      {n:"청라달튼외국인학교",r:"인천 청라",c:"미국식·AP"},
+      {n:"경기수원외국인학교 (GSIS)",r:"경기 수원",c:"미국식·IB"},
+      {n:"대전외국인학교 (TCIS)",r:"대전",c:"미국식·AP·IB"},
+      {n:"NLCS 제주",r:"제주 영어교육도시",c:"영국계·IGCSE·A-Level·IB"},
+      {n:"브랭섬홀아시아 (BHA)",r:"제주 영어교육도시",c:"IB"},
+      {n:"한국국제학교 제주 (KIS Jeju)",r:"제주 영어교육도시",c:"미국식·AP"},
+      {n:"세인트존스베리아카데미 제주 (SJA Jeju)",r:"제주 영어교육도시",c:"미국식"},
+      {n:"부산외국인학교 (BFS)",r:"부산 해운대",c:"미국식·AP"},
+      {n:"부산국제외국인학교 (BIFS)",r:"부산 기장",c:"IB"},
+      {n:"대구국제학교 (DIS)",r:"대구",c:"미국식·AP"},
+      {n:"광주외국인학교 (GIS)",r:"광주",c:"미국식"},
+      {n:"전주화산외국인학교",r:"전북 전주",c:"미국식"},
+      {n:"거제국제외국인학교 (GIFS)",r:"경남 거제",c:"미국식"}
+    ];
+    var INTL_SCHOOLS=[
+      {n:"필립스 엑서터 아카데미",r:"미국 (보딩)",c:"미국식·AP"},
+      {n:"필립스 아카데미 앤도버",r:"미국 (보딩)",c:"미국식·AP"},
+      {n:"하커 스쿨",r:"미국 캘리포니아",c:"미국식·AP"},
+      {n:"토머스제퍼슨 과학고 (TJ)",r:"미국 버지니아",c:"미국식·AP"},
+      {n:"버겐카운티 아카데미",r:"미국 뉴저지",c:"미국식·AP"},
+      {n:"포트리 고등학교",r:"미국 뉴저지",c:"미국식·AP"},
+      {n:"몬타비스타·린브룩·미션산호세 고등학교",r:"미국 캘리포니아",c:"미국식·AP"},
+      {n:"어퍼캐나다칼리지 (UCC)",r:"캐나다 토론토",c:"IB·미국식"},
+      {n:"세인트조지스 스쿨",r:"캐나다 밴쿠버",c:"미국식·AP"},
+      {n:"토론토·밴쿠버 공립(국제학생)",r:"캐나다",c:"미국식"},
+      {n:"시드니 그래머 스쿨",r:"호주 시드니",c:"호주(HSC)·IB"},
+      {n:"멜버른 그래머 스쿨",r:"호주 멜버른",c:"호주(VCE)·IB"},
+      {n:"녹스 그래머 스쿨",r:"호주 시드니",c:"호주·IB"},
+      {n:"오클랜드 그래머 스쿨",r:"뉴질랜드 오클랜드",c:"케임브리지(CIE)"},
+      {n:"킹스 칼리지",r:"뉴질랜드 오클랜드",c:"케임브리지·NCEA"},
+      {n:"아메리칸스쿨 인 재팬 (ASIJ)",r:"일본 도쿄",c:"미국식·AP"},
+      {n:"니시마치 인터내셔널 스쿨",r:"일본 도쿄",c:"미국식"},
+      {n:"요코하마 인터내셔널 스쿨 (YIS)",r:"일본 요코하마",c:"IB"},
+      {n:"상하이 아메리칸 스쿨 (SAS)",r:"중국 상하이",c:"미국식·AP"},
+      {n:"국제학교 베이징 (ISB)",r:"중국 베이징",c:"미국식·IB"},
+      {n:"베이징 BSB (영국계)",r:"중국 베이징",c:"영국계·IB"}
+    ];
+    var _tab='kr', _filtered=[];
+    function _list(){ return _tab==='kr'?KR_SCHOOLS:INTL_SCHOOLS; }
+    function setSchoolTab(t){
+      _tab=t;
+      document.getElementById('tabKr').className='ftab'+(t==='kr'?' active':'');
+      document.getElementById('tabIntl').className='ftab'+(t==='intl'?' active':'');
+      document.getElementById('schoolSearch2').value='';
+      document.getElementById('schoolSearch2').placeholder = (t==='kr') ? '🔍 학교 이름 검색 (예: 대전외국인학교)' : '🔍 학교 이름 검색 (예: 상하이 아메리칸)';
+      document.getElementById('schoolList2').style.display='none';
+      var d=document.getElementById('schoolDetail'); d.className='school-detail'; d.innerHTML='';
+    }
+    function renderSchoolList(){
+      var q=document.getElementById('schoolSearch2').value.trim().toLowerCase().replace(/\s/g,'');
+      var box=document.getElementById('schoolList2');
+      if(!q){ box.style.display='none'; box.innerHTML=''; return; }
+      _filtered=_list().filter(function(s){ return s.n.toLowerCase().replace(/\s/g,'').indexOf(q)!==-1; });
+      if(!_filtered.length){ box.innerHTML='<div class="none">검색 결과가 없습니다. 카톡·전화로 문의해 주세요!</div>'; box.style.display='block'; return; }
+      box.innerHTML=_filtered.map(function(s,i){ return '<a href="#" onclick="showSchool('+i+');return false;">'+s.n+' <span style="color:#8a94a3">· '+s.r+'</span></a>'; }).join('');
+      box.style.display='block';
+    }
+    function _curMath(c){
+      if(c.indexOf('A-Level')>=0||c.indexOf('영국')>=0||c.indexOf('케임브리지')>=0) return 'IGCSE·A-Level';
+      if(c.indexOf('IB')>=0) return 'IB';
+      if(c.indexOf('AP')>=0) return 'AP';
+      return '현지 교육과정';
+    }
+    function showSchool(i){
+      var s=_filtered[i]; if(!s) return;
+      var cm=_curMath(s.c);
+      var html=''
+        +'<h4>'+s.n+'</h4>'
+        +'<div class="sd-region">📍 '+s.r+' · '+s.c+'</div>'
+        +'<div class="sd-block"><b>학교 특징</b><p>'+s.n+'은(는) '+s.r+'의 '+s.c+' 국제학교입니다. 수업과 평가가 영어로 진행되고 진도가 빠르기 때문에, 영어 실력과 기초 개념이 탄탄해야 잘 따라갈 수 있습니다.</p></div>'
+        +'<div class="sd-block"><b>수학 과외 준비</b><p>알지브라(Algebra)·지오메트리(Geometry) 기초가 탄탄해야 '+cm+' 수학(프리캘큘러스·캘큘러스 등)으로 자연스럽게 이어집니다. 빈 개념을 1:1 수학과외로 그때그때 채우는 것이 핵심입니다.</p></div>'
+        +'<div class="sd-block"><b>영어 과외 준비</b><p>영어과외로 원서 리딩, 에세이 라이팅·첨삭, 영어 토론을 체계적으로 관리하면 내신과 시험에서 큰 차이가 납니다. 영어가 약한 학생은 적응 단계부터 1:1로 돕습니다.</p></div>'
+        +'<div class="sd-block"><b>입학 준비</b><p>입학은 영어 시험 + 면접(인터뷰) + 에세이가 핵심입니다. 학교별 입학조건에 맞춰 에세이 첨삭과 영어 인터뷰를 1:1로 준비하면 합격 가능성이 높아집니다.</p></div>'
+        +'<a class="sd-cta" href="tel:010-6832-1994">📞 상담받기 010-6832-1994</a>';
+      var d=document.getElementById('schoolDetail'); d.innerHTML=html; d.className='school-detail show';
+      document.getElementById('schoolList2').style.display='none';
+    }
+    document.addEventListener('click',function(e){
+      var inp=document.getElementById('schoolSearch2'), box=document.getElementById('schoolList2');
+      if(box&&inp&&!inp.contains(e.target)&&!box.contains(e.target)){ box.style.display='none'; }
+    });
+  </script>
   <script>
     (function(){
       var track=document.getElementById('teacherTrack');
