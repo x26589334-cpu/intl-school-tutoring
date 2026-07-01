@@ -71,7 +71,8 @@ git push
   - news19=Monta Vista, news20=Tenafly, news21=Mission San Jose (6/28)
   - news22=Thomas Jefferson 과학고, news23=Lynbrook, news24=Fort Lee (6/29)
   - news25=Palo Alto, news26=McLean, news27=Plano West (6/30)
-  - 다음 글은 news-28부터. 폴더의 나머지 미국 학교들(St. Paul's, Lakeside, Chadwick School, Fay, Fessenden, Crystal Springs, Bellaire, Bellevue, Monta Vista, Lynbrook, Palo Alto, Mission San Jose, Tenafly, 각종 public high 등)이 미사용.
+  - news28=Irvine, news29=Northern Valley Demarest, news30=Westlake (7/1)
+  - 다음 글은 news-31부터. 폴더의 나머지 미국 학교들(St. Paul's, Lakeside, Chadwick School, Fay, Fessenden, Crystal Springs, Bellaire, Bellevue, Monta Vista, Lynbrook, Palo Alto, Mission San Jose, Tenafly, 각종 public high 등)이 미사용.
 
 ## 남은 TODO (실제 내용으로 교체 권장)
 - [ ] reviews.html 후기: 현재 예시 → 실제 후기
