@@ -79,7 +79,8 @@ git push
   - news25=Palo Alto, news26=McLean, news27=Plano West (6/30)
   - news28=Irvine, news29=Northern Valley Demarest, news30=Westlake (7/1)
   - news31=Ridgewood, news32=Bellevue, news33=Langley (7/2)
-  - 다음 글은 news-34부터. 폴더의 나머지 미국 학교들(St. Paul's, Lakeside, Chadwick School, Fay, Fessenden, Crystal Springs, Bellaire, Bellevue, Monta Vista, Lynbrook, Palo Alto, Mission San Jose, Tenafly, 각종 public high 등)이 미사용.
+  - news34=Interlake, news35=Chantilly, news36=Reedy (7/3)
+  - 다음 글은 news-37부터. 폴더의 나머지 미국 학교들(St. Paul's, Lakeside, Chadwick School, Fay, Fessenden, Crystal Springs, Bellaire, Bellevue, Monta Vista, Lynbrook, Palo Alto, Mission San Jose, Tenafly, 각종 public high 등)이 미사용.
 
 ## 남은 TODO (실제 내용으로 교체 권장)
 - [ ] reviews.html 후기: 현재 예시 → 실제 후기
