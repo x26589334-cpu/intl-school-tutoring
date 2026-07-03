@@ -80,7 +80,8 @@ git push
   - news28=Irvine, news29=Northern Valley Demarest, news30=Westlake (7/1)
   - news31=Ridgewood, news32=Bellevue, news33=Langley (7/2)
   - news34=Interlake, news35=Chantilly, news36=Reedy (7/3)
-  - 다음 글은 news-37부터. 폴더의 나머지 미국 학교들(St. Paul's, Lakeside, Chadwick School, Fay, Fessenden, Crystal Springs, Bellaire, Bellevue, Monta Vista, Lynbrook, Palo Alto, Mission San Jose, Tenafly, 각종 public high 등)이 미사용.
+  - news37=인천 EJU 수학과외, news38=청주 EJU, news39=세종 EJU (7/3, 지역+EJU 수학과외 2000자, 글자 썸네일 자동생성)
+  - 다음 글은 news-40부터. 폴더의 나머지 미국 학교들(St. Paul's, Lakeside, Chadwick School, Fay, Fessenden, Crystal Springs, Bellaire, Bellevue, Monta Vista, Lynbrook, Palo Alto, Mission San Jose, Tenafly, 각종 public high 등)이 미사용.
 
 ## 남은 TODO (실제 내용으로 교체 권장)
 - [ ] reviews.html 후기: 현재 예시 → 실제 후기
