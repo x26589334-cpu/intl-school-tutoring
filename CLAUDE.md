@@ -15,6 +15,11 @@ git push
 ```
 → 1~2분 후 라이브 사이트에 자동 반영 (GitHub Pages). 캐시 때문에 안 보이면 Ctrl+Shift+R.
 
+### ⚠️ Pages 배포가 안 될 때 (자주 있음)
+- 증상: push 했는데 새 페이지가 라이브에서 404. GitHub Actions "pages build and deployment"에서 **build는 success인데 deploy 단계만 failure** (GitHub 쪽 간헐 오류).
+- 해결: **빈 커밋으로 재시도** → `git commit --allow-empty -m "retry Pages deploy" && git push`. 보통 1~2회 재시도면 deploy 성공. (또는 GitHub 웹 → Actions 탭 → 실패한 실행 → "Re-run failed jobs")
+- 확인법(캐시 무시): `curl -o /dev/null -s -w "%{http_code}" "https://internationaledu.co.kr/새페이지.html?cb=1"` → 200이면 반영됨.
+
 ## 파일 구조
 - `index.html` — 홈 (히어로 / 선생님 소개(#about) / 강사진 슬라이드(#teachers) / 진학안내(#abroad) / 과목(#subjects) / 관리중인학교 바로가기 / 후기 바로가기 / 성적그래프(SVG) / 추천 / 진행과정(#process) / 신청(#apply))
 - `schools.html` — 관리중인 학교 (상단 검색창 + 지역별 그룹 + 해외 국가별 카드)
