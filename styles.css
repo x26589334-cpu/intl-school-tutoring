@@ -96,6 +96,22 @@
   .school-detail .sd-block p{font-size:14px;color:var(--ink);line-height:1.7}
   .school-detail .sd-cta{display:inline-block;margin-top:18px;background:var(--red);color:#fff;font-weight:700;padding:12px 22px;border-radius:999px;text-decoration:none;font-size:14.5px}
 
+  /* ===== 글 하단 FAQ (FAQPage 구조화 데이터와 짝) ===== */
+  .faq-h{font-size:22px;font-weight:900;color:var(--ink);margin:36px 0 14px}
+  .faq{display:grid;gap:12px}
+  .faq-item{background:var(--sky);border:1px solid var(--line);border-radius:14px;padding:18px 20px}
+  .faq-q{font-weight:800;color:var(--navy);font-size:16px;margin-bottom:7px}
+  .faq-a{color:var(--muted);font-size:15px;line-height:1.8}
+
+  /* ===== 지역별 과외 허브 (홈) ===== */
+  .region-hub{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:26px}
+  .region-hub a{
+    background:#fff;border:1px solid var(--line);border-radius:999px;
+    padding:11px 20px;text-decoration:none;color:var(--navy);font-weight:700;font-size:15px;
+    box-shadow:0 3px 10px rgba(30,25,20,.05);transition:transform .15s,border-color .15s;
+  }
+  .region-hub a:hover{transform:translateY(-2px);border-color:var(--accent);color:var(--accent)}
+
   /* ===== Hero (사진 배경 + 좌측 딥 그라데이션) ===== */
   .hero{
     background:var(--charcoal) url('hero.jpg') center right/cover no-repeat;
