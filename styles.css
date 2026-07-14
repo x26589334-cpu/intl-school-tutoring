@@ -118,6 +118,8 @@
   .grade-row b{color:var(--accent);font-size:15px}
   .grade-row p{margin:6px 0 0;font-size:14.5px;color:var(--muted);line-height:1.75}
   .country .cg-link{display:block;text-decoration:none;color:inherit}
+  .cp-photo{width:100%;height:auto;border-radius:16px;margin:26px 0 8px;display:block;box-shadow:0 10px 26px rgba(30,25,20,.12)}
+  .cp-cap{font-size:13px;color:var(--muted);text-align:center;margin:0 0 26px}
 
   /* ===== 지역별 과외 허브 (홈) ===== */
   .region-hub{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:26px}
