@@ -103,6 +103,22 @@
   .faq-q{font-weight:800;color:var(--navy);font-size:16px;margin-bottom:7px}
   .faq-a{color:var(--muted);font-size:15px;line-height:1.8}
 
+  /* ===== 국가별 상세 페이지 ===== */
+  .country-page .lead-box{background:var(--sky);border:1px solid var(--line);border-radius:16px;padding:22px 24px;margin:22px 0 30px}
+  .country-page h2{font-size:clamp(21px,3.4vw,27px);font-weight:900;color:var(--ink);margin:38px 0 14px;padding-bottom:10px;border-bottom:2px solid var(--accent)}
+  .country-page h3{font-size:18px;font-weight:800;color:var(--navy);margin:22px 0 8px}
+  .country-page p{margin-bottom:12px;line-height:1.85}
+  .city-chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 6px}
+  .city-chips span{background:#fff;border:1px solid var(--line);border-radius:999px;padding:8px 15px;font-size:14px;font-weight:700;color:var(--navy)}
+  .subj-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:16px}
+  .subj{background:#fff;border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:12px;padding:16px 18px}
+  .subj b{display:block;color:var(--navy);font-size:15.5px;margin-bottom:6px}
+  .subj p{font-size:14.5px;color:var(--muted);margin:0;line-height:1.75}
+  .grade-row{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin-bottom:10px}
+  .grade-row b{color:var(--accent);font-size:15px}
+  .grade-row p{margin:6px 0 0;font-size:14.5px;color:var(--muted);line-height:1.75}
+  .country .cg-link{display:block;text-decoration:none;color:inherit}
+
   /* ===== 지역별 과외 허브 (홈) ===== */
   .region-hub{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:26px}
   .region-hub a{
