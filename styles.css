@@ -166,8 +166,42 @@
   .camp-table .btn-apply{display:inline-block;background:var(--accent);color:#fff;font-weight:800;font-size:14px;padding:10px 20px;border-radius:999px;text-decoration:none;white-space:nowrap;box-shadow:0 4px 12px rgba(245,115,79,.3)}
   .camp-table .btn-apply:hover{background:#e05f3c}
   .camp-note{font-size:13.5px;color:var(--muted);line-height:1.8;margin-top:12px}
-  .camp-hint{display:none;text-align:center;font-size:13px;color:var(--accent);font-weight:700;margin:6px 0 0}
-  @media (max-width:1120px){ .camp-hint{display:block} }
+
+  /* CTA 버튼 행 (related-links 밖으로 빼서 색 충돌 방지) */
+  .camp-cta-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:16px}
+  .camp-cta-row .btn{font-size:16px}
+  .btn-kakao{background:#FEE500;color:#3A1D1D;border:1px solid #e6ce00}
+  .btn-kakao:hover{background:#f5dc00}
+
+  /* ===== 모바일: 표 대신 나라별 카드 (세로 스크롤) ===== */
+  .camp-mobile{display:none}
+  .pgroup-title{
+    display:flex;align-items:center;gap:8px;font-size:19px;font-weight:900;color:var(--navy);
+    margin:30px 0 12px;padding-bottom:8px;border-bottom:2px solid var(--accent);
+  }
+  .pgroup-title span{font-size:13px;font-weight:700;color:var(--muted)}
+  .pcard{background:#fff;border:1px solid #ddd7cf;border-radius:14px;overflow:hidden;margin-bottom:14px;box-shadow:0 4px 14px rgba(30,25,20,.06)}
+  .pcard-head{background:var(--navy);color:#fff;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+  /* .country-page h3 보다 우선하도록 구체성 확보 (navy 글자 → 안 보이던 버그) */
+  .camp-mobile .pcard .pcard-head h3{font-size:17px;font-weight:900;margin:0;color:#fff}
+  .camp-mobile .pcard .pcard-head .pprice{font-size:17px;font-weight:900;color:var(--accent-2);white-space:nowrap}
+  .pcard-body{margin:0;padding:6px 0}
+  .pcard-body > div{display:flex;gap:10px;padding:9px 16px;border-bottom:1px solid #f0ece7}
+  .pcard-body > div:last-child{border-bottom:none}
+  .pcard-body dt{flex:0 0 62px;font-size:13px;font-weight:800;color:var(--muted);padding-top:1px}
+  .pcard-body dd{flex:1;margin:0;font-size:14.5px;color:var(--ink);line-height:1.7}
+  .pcard-body dd b{color:var(--navy)}
+  .pcard-body dd.sum{color:#e0653f;font-weight:800}
+  .pcard-body ul{margin:0;padding-left:16px}
+  .pcard-body ul li{font-size:14px;color:#5c5f68;line-height:1.75;margin-bottom:2px}
+  .pcard-foot{padding:12px 16px 16px}
+  .pcard-foot a{display:block;text-align:center;background:var(--accent);color:#fff;font-weight:800;font-size:15px;padding:13px;border-radius:999px;text-decoration:none}
+  .pcard-foot a:hover{background:#e05f3c}
+
+  @media (max-width:900px){
+    .camp-scroll{display:none}
+    .camp-mobile{display:block}
+  }
   .camp-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin:22px 0}
   .camp-card{background:#fff;border:1px solid var(--line);border-top:4px solid var(--accent);border-radius:14px;padding:18px 20px}
   .camp-card h4{font-size:17px;font-weight:900;color:var(--navy);margin-bottom:4px}
