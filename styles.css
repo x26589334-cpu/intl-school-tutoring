@@ -167,12 +167,6 @@
   .camp-table .btn-apply:hover{background:#e05f3c}
   .camp-note{font-size:13.5px;color:var(--muted);line-height:1.8;margin-top:12px}
 
-  /* CTA 버튼 행 (related-links 밖으로 빼서 색 충돌 방지) */
-  .camp-cta-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:16px}
-  .camp-cta-row .btn{font-size:16px}
-  .btn-kakao{background:#FEE500;color:#3A1D1D;border:1px solid #e6ce00}
-  .btn-kakao:hover{background:#f5dc00}
-
   /* ===== 모바일: 표 대신 나라별 카드 (세로 스크롤) ===== */
   .camp-mobile{display:none}
   .pgroup-title{
