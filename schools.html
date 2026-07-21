@@ -538,6 +538,20 @@
       {n:"TASIS 잉글랜드 (TASIS The American School in England)",r:"영국 런던",c:"미국식·AP·IB"},
       {n:"세인트스티븐스 스쿨 로마 (St. Stephen's School Rome)",r:"이탈리아 로마",c:"미국식·AP"}
     ];
+    // 주재원 자녀가 많이 다니는 학교 자동 태깅 (검색·상세정보에 노출) — 학교 성격별로 정확하게 구분
+    INTL_SCHOOLS.forEach(function(s){
+      var r=s.r;
+      if(/보딩/.test(r)){ s.j=''; return; }  // 미국 보딩스쿨은 조기유학 성격 → 주재원 태그 제외
+      if(/싱가포르|홍콩|중국|베이징|상하이|선전|광저우|쑤저우|일본|도쿄|요코하마|나고야|오사카|고베|베트남|호치민|하노이|다낭|태국|방콕|치앙마이|푸켓|말레이시아|쿠알라룸푸르|조호|인도네시아|자카르타|필리핀|마닐라|세부|대만|타이베이|두바이|UAE|중동|아부다비|인도/.test(r))
+        s.j='주재원 자녀가 특히 많이 다니는 학교';        // 아시아·중동 주재원 허브 도시
+      else if(/뉴저지|캘리포니아|산호세|쿠퍼티노|프리몬트|어바인|워싱턴|시애틀|벨뷰|레드먼드|텍사스|플레이노|프리스코|오스틴|휴스턴|버지니아/.test(r))
+        s.j='한국 대기업 주재원·기러기 가정이 많은 지역의 학교';  // 삼성·현대·LG 등 미국 주재 밀집지
+      else s.j='';
+    });
+    KR_SCHOOLS.forEach(function(s){
+      s.j='귀국 주재원 자녀와 주한 외국인 주재원 자녀가 다니는 학교';  // 국내 국제·외국인학교
+    });
+
     var _tab='kr', _filtered=[];
     function _list(){ return _tab==='kr'?KR_SCHOOLS:INTL_SCHOOLS; }
     function setSchoolTab(t){
@@ -553,9 +567,9 @@
       var q=document.getElementById('schoolSearch2').value.trim().toLowerCase().replace(/\s/g,'');
       var box=document.getElementById('schoolList2');
       if(!q){ box.style.display='none'; box.innerHTML=''; return; }
-      _filtered=_list().filter(function(s){ return (s.r+' '+s.n).toLowerCase().replace(/\s/g,'').indexOf(q)!==-1; });
+      _filtered=_list().filter(function(s){ return (s.r+' '+s.n+' '+s.c+' '+(s.j||'')).toLowerCase().replace(/\s/g,'').indexOf(q)!==-1; });
       if(!_filtered.length){ box.innerHTML='<div class="none">검색 결과가 없습니다. 카톡·전화로 문의해 주세요!</div>'; box.style.display='block'; return; }
-      box.innerHTML=_filtered.map(function(s,i){ return '<a href="#" onclick="showSchool('+i+');return false;"><b style="color:var(--navy)">'+s.r.split(' ')[0]+'</b> · '+s.n+'</a>'; }).join('');
+      box.innerHTML=_filtered.map(function(s,i){ return '<a href="#" onclick="showSchool('+i+');return false;"><b style="color:var(--navy)">'+s.r.split(' ')[0]+'</b> · '+s.n+(s.j&&s.j.indexOf('주재원')>=0?' <span style="display:inline-block;background:#fff0ea;color:var(--accent);font-size:11px;font-weight:800;padding:1px 7px;border-radius:999px;vertical-align:middle">주재원</span>':'')+'</a>'; }).join('');
       box.style.display='block';
     }
     function _curMath(c){
@@ -574,6 +588,7 @@
         +'<div class="sd-block"><b>수학 과외 준비</b><p>알지브라(Algebra)·지오메트리(Geometry) 기초가 탄탄해야 '+cm+' 수학(프리캘큘러스·캘큘러스 등)으로 자연스럽게 이어집니다. 빈 개념을 1:1 수학과외로 그때그때 채우는 것이 핵심입니다.</p></div>'
         +'<div class="sd-block"><b>영어 과외 준비</b><p>영어과외로 원서 리딩, 에세이 라이팅·첨삭, 영어 토론을 체계적으로 관리하면 내신과 시험에서 큰 차이가 납니다. 영어가 약한 학생은 적응 단계부터 1:1로 돕습니다.</p></div>'
         +'<div class="sd-block"><b>입학 준비</b><p>입학은 영어 시험 + 면접(인터뷰) + 에세이가 핵심입니다. 학교별 입학조건에 맞춰 에세이 첨삭과 영어 인터뷰를 1:1로 준비하면 합격 가능성이 높아집니다.</p></div>'
+        +(s.j?'<div class="sd-block" style="background:#fff5f0;border-left:3px solid var(--accent);padding:12px 14px;border-radius:8px"><b>👨‍👩‍👧 주재원 자녀</b><p>'+s.n+'은(는) '+s.j+'입니다. 발령·귀국으로 학기 중간에 편입하는 경우가 많아, 입학 배치고사와 부족한 과목을 1:1 화상 수학과외·영어과외로 빠르게 보완하도록 돕습니다.</p></div>':'')
         +'<a class="sd-cta" href="tel:010-6832-1994">📞 상담받기 010-6832-1994</a>';
       var d=document.getElementById('schoolDetail'); d.innerHTML=html; d.className='school-detail show';
       document.getElementById('schoolList2').style.display='none';
