@@ -110,6 +110,15 @@ git push
   - ⚠️ 사용자 선호: **글자 썸네일 별로임 → 실제 사진 사용할 것.** 집 PC엔 '국제학교 사진' 폴더가 없어 repo 기존 간판없는 캠퍼스 컷 재사용(현재까지 사용한 클린 컷: news11·13·14·17·60). 사무실 PC엔 폴더 있음.
   - 📌 **SEO 방향(2026-07-12 지시)**: 노출수 하락 → 미국 무명 공립고 양산 자제. 검색수요 큰 쪽으로 다변화 = ① 주재원 인기도시(싱가포르·홍콩·상하이·도쿄·베트남·두바이) ② 명문 한국 국제학교 개별글(SFS·SIS·YISS·채드윅송도·NLCS제주 등) ③ 지역+국제학교/EJU 과외(로컬 인텐트). 글마다 내용 차별화 필수(템플릿 복붙 지양).
 
+## 조회수 카운터 (2026-07-21 추가)
+- `views.js` — 무료 조회수 API(Abacus, https://abacus.jasoncameron.dev, 서버/가입 불필요) 연결. 네임스페이스 `internationaledu-co-kr`.
+- 표시 형식: `👁 1,234`. 화면 요소 `<span class="view-count" data-slug="news-N" data-mode="hit">`.
+  - `data-mode="hit"` = 상세글(news-N.html) — 열 때 +1. 같은 방문자는 **세션당 1회만** +1(새로고침 뻥튀기 방지, sessionStorage).
+  - `data-mode` 없음 = 목록(news.html 카드) — 증가 없이 숫자만 표시. 아직 조회 0인 글은 `👁 0`.
+- 실패 시 조용히 숨김(페이지 안 깨짐). CSS `.view-count`는 styles.css article-meta 아래.
+- ⚠️ **새 news-N.html 만들 때**: ① `<div class="article-meta">…<span class="view-count" data-slug="news-N" data-mode="hit"></span></div>` ② `</body>` 앞에 `<script src="views.js"></script>` ③ news.html 카드 post-meta에 `<span class="view-count" data-slug="news-N"></span>` 추가.
+- 숫자는 2026-07-21부터 새로 집계(과거 GA4 조회수와 별개). 상세 통계는 여전히 GA4(G-RQ5Q4ZKWQ6)에서 확인.
+
 ## 남은 TODO (실제 내용으로 교체 권장)
 - [ ] reviews.html 후기: 현재 예시 → 실제 후기
 - [ ] study.html 유학 상품: 현재 예시 → 실제 상품/가격
