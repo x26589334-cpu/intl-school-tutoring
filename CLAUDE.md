@@ -20,6 +20,12 @@ git push
 - 해결: **빈 커밋으로 재시도** → `git commit --allow-empty -m "retry Pages deploy" && git push`. 보통 1~2회 재시도면 deploy 성공. (또는 GitHub 웹 → Actions 탭 → 실패한 실행 → "Re-run failed jobs")
 - 확인법(캐시 무시): `curl -o /dev/null -s -w "%{http_code}" "https://internationaledu.co.kr/새페이지.html?cb=1"` → 200이면 반영됨.
 
+## ⭐ 유학/뉴스 카테고리 분리 규칙 (사용자 요청 2026-08-04)
+- **유학 블로그칸(study.html)** 과 **뉴스칸(news.html)** 은 별개 카테고리. **같은 글을 양쪽에 겹치게 넣지 말 것.**
+- 유학 주제 글 → study.html 블로그칸(`<!-- ▼▼▼ 유학 블로그칸 -->` 안 `.news-grid`)에만. 뉴스 주제 글 → news.html에만.
+- 두 페이지 모두 news-pager.js로 5개씩 자동 페이지네이션(사진 중복 제거 포함) — 카드 한 블록 복사해 맨 위 삽입하면 됨.
+- ※ study.html 블로그칸에 처음 넣은 시드 카드 8개(news-114·113·97·112·117·116·121·특례)는 **그대로 유지**(사용자: "그건 그냥 냅둬"). 분리 규칙은 이후 새 업데이트부터 적용.
+
 ## 파일 구조
 - `index.html` — 홈 (히어로 / 선생님 소개(#about) / 강사진 슬라이드(#teachers) / 진학안내(#abroad) / 과목(#subjects) / 관리중인학교 바로가기 / 후기 바로가기 / 성적그래프(SVG) / 추천 / 진행과정(#process) / 신청(#apply))
 - `schools.html` — 관리중인 학교 (상단 검색창 + 지역별 그룹 + 해외 국가별 카드)
