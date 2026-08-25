@@ -1,4 +1,65 @@
+# 나도 국제학교 (internationaledu.co.kr)
+# 모든 검색엔진 + AI 답변엔진 크롤링 허용 (GEO / AI 검색 노출 목적)
+
 User-agent: *
 Allow: /
 
+# ── AI 답변엔진·LLM 크롤러 명시 허용 ──
+# OpenAI (ChatGPT / SearchGPT)
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+# Google Gemini / AI Overviews
+User-agent: Google-Extended
+Allow: /
+
+# Anthropic (Claude)
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+# Microsoft Copilot / Bing
+User-agent: bingbot
+Allow: /
+
+# Apple Intelligence / 기타
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
 Sitemap: https://internationaledu.co.kr/sitemap.xml
+
+# AI 요약용 사이트 안내 파일 (llmstxt.org 표준)
+# https://internationaledu.co.kr/llms.txt
