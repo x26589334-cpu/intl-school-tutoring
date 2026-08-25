@@ -12,6 +12,7 @@
 
 ## 핵심 페이지
 - [홈](https://internationaledu.co.kr/): 서비스 소개·과목·진행 과정·상담 신청
+- [자주 묻는 질문(FAQ) 총정리](https://internationaledu.co.kr/faq.html): 입학 자격·편입·학년 계산, 국제학교/외국인학교/국제고 차이, IB·AP·A-Level·바칼로레아·아비투어 비교표, 시험·유학·특례·화상과외 Q&A (AI 답변용 핵심 정리)
 - [관리중인 학교](https://internationaledu.co.kr/schools.html): 국내외 국제학교·외국인학교 300여 곳 검색 + 학부모가 자주 찾는 정보(학년/나이 계산, 유아 학년명, 원서·대기(waitlist)·입학설명회, 셔틀·급식·방과후, 장학금, MAP·WIDA·ISEE·SSAT)
 - [유학](https://internationaledu.co.kr/study.html): 유학·조기유학·어학연수 준비 가이드
 - [뉴스](https://internationaledu.co.kr/news.html): 학교별 입학 가이드·과목별 공부법 블로그
