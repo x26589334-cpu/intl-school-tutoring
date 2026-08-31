@@ -518,3 +518,70 @@
     .step{flex-direction:row}
     .kakao-fab{bottom:66px;right:14px;padding:11px 16px;font-size:14px}
   }
+
+  /* ============================================================
+     입체감(깊이감) 강화 — 전 페이지 공용 (2026-08-31)
+     카드에 부드러운 다층 그림자 + 마우스오버 살짝 떠오르는 효과
+     ============================================================ */
+  :root{
+    --shadow-sm:0 1px 3px rgba(30,25,20,.04),0 4px 12px rgba(30,25,20,.06);
+    --shadow-md:0 2px 6px rgba(30,25,20,.05),0 12px 28px rgba(30,25,20,.10);
+    --shadow-lg:0 6px 14px rgba(30,25,20,.08),0 20px 44px rgba(30,25,20,.14);
+  }
+
+  /* 페이지 바탕에 아주 옅은 그라데이션으로 깊이감 */
+  body{
+    background:
+      radial-gradient(1200px 600px at 100% -5%, rgba(245,115,79,.05), transparent 60%),
+      radial-gradient(1000px 500px at 0% 100%, rgba(35,37,44,.04), transparent 55%),
+      var(--bg);
+    background-attachment:fixed;
+  }
+
+  /* 후기 카드 */
+  .rev{
+    background:#fff;
+    box-shadow:var(--shadow-sm);
+    transition:transform .18s ease,box-shadow .18s ease;
+  }
+  .rev:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
+
+  /* 과목·학년·FAQ·캠프 카드 */
+  .subj,.grade-row,.faq-item,.camp-card{
+    box-shadow:var(--shadow-sm);
+    transition:transform .18s ease,box-shadow .18s ease;
+  }
+  .subj:hover,.grade-row:hover,.faq-item:hover,.camp-card:hover{
+    transform:translateY(-3px);
+    box-shadow:var(--shadow-md);
+  }
+
+  /* 리드박스·학교찾기·비교표·상세카드 살짝 띄우기 */
+  .country-page .lead-box,.lead-box{box-shadow:var(--shadow-sm)}
+  .school-finder{box-shadow:var(--shadow-md)}
+  .pcard{box-shadow:var(--shadow-sm);transition:transform .18s ease,box-shadow .18s ease}
+  .pcard:hover{transform:translateY(-3px);box-shadow:var(--shadow-md)}
+  .cp-photo,.article-hero{box-shadow:var(--shadow-md)}
+  .country-page table{box-shadow:var(--shadow-sm);border-radius:12px;overflow:hidden}
+
+  /* 홈 지역 허브 링크 — 기본 그림자 추가 */
+  .region-hub a{box-shadow:var(--shadow-sm);transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease,color .18s ease}
+  .region-hub a:hover{box-shadow:var(--shadow-md)}
+  .city-chips span{box-shadow:var(--shadow-sm)}
+
+  /* 목록 카드 hover 그림자 좀 더 깊게 */
+  .post:hover{box-shadow:var(--shadow-lg)}
+
+  /* 버튼 입체감 + 눌리는 느낌 */
+  .green-cta,.sd-cta,.school-detail .sd-cta,.camp-table .btn-apply,.pcard-foot a{
+    transition:transform .15s ease,box-shadow .15s ease,background .15s ease;
+  }
+  .green-cta:hover,.sd-cta:hover,.school-detail .sd-cta:hover,.camp-table .btn-apply:hover,.pcard-foot a:hover{
+    transform:translateY(-2px);
+    box-shadow:0 10px 24px rgba(30,25,20,.20);
+  }
+  .green-cta:active,.sd-cta:active,.pcard-foot a:active{transform:translateY(0)}
+
+  /* nav 링크 hover 시 살짝 떠오르게 */
+  .nav a{transition:background .15s,color .15s,transform .15s}
+  .nav a:hover{transform:translateY(-1px)}
