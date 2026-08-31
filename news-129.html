@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="styles.css?v=2" />
 <script src="analytics.js"></script>
 <meta property="og:type" content="article" />
 <meta property="og:site_name" content="나도 국제학교" />
@@ -46,7 +46,7 @@
   <!-- Top bar -->
   <div class="topbar">
     <div class="wrap">
-      <div class="brand"><a href="index.html">나도 <b>국제학교</b></a></div>
+      <div class="brand"><a href="index.html" aria-label="나도 국제학교 홈"><img class="lg-dark" src="logo-dark.png" alt="나도 국제학교" width="184" height="52"><img class="lg-light" src="logo-light.png" alt="" width="192" height="52"></a></div>
       <div class="tel"><span class="dot"></span><a href="tel:010-6832-1994">상담신청</a></div>
     </div>
   </div>
@@ -131,5 +131,6 @@
 
   <script src="livebar.js"></script>
 <script src="views.js"></script>
+<script>(function(){var b=document.body;function f(){b.classList.toggle("scrolled",window.scrollY>40)}addEventListener("scroll",f,{passive:true});f()})();</script>
 </body>
 </html>

@@ -35,7 +35,9 @@ git push
 - `news-N.html` — 뉴스 상세 글 (현재 news-1 ~ news-5)
 - `styles.css` — 전 페이지 공용 스타일 (색/폰트 한 곳에서 관리)
 - `form.js` — 신청 폼 처리 → 구글 시트 전송
-- `favicon.svg` — 빨간 원 "I" 마크 / `og-image.png` — 링크 미리보기 이미지
+- `favicon.svg` — 지구본+책 심볼 (2026-09-01 교체, PNG 임베드 SVG) / `og-image.png` — 링크 미리보기 이미지
+- `logo-dark.png`(흰글씨)·`logo-light.png`(남색글씨) — 상단바 로고(380px). 헤더는 기본 검정, 스크롤 40px 넘으면 흰색 전환(`body.scrolled`, 각 페이지 `</body>` 앞 인라인 스크립트). ⚠️ **새 페이지 만들 때** 기존 페이지의 brand 마크업(로고 img 2장)+스크롤 스크립트+`styles.css?v=2` 를 그대로 복사할 것.
+- `hero-new.jpg` — 홈 히어로 사진(AI 생성·워터마크 제거본). 구 `hero.jpg`는 404 방지용으로 보존.
 - `sitemap.xml`, `rss.xml`, `robots.txt` — 검색엔진용
 - `face1~12.png` — 강사 사진(현재 CSS로 숨김, 카드는 텍스트만)
 - `news1~5.jpg` — 뉴스 글 사진

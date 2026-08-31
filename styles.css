@@ -40,30 +40,41 @@
 
   /* ===== Top bar ===== */
   .topbar{
-    position:sticky;top:0;z-index:50;background:rgba(26,27,32,.96);
-    backdrop-filter:blur(6px);color:#fff;
+    position:sticky;top:0;z-index:50;background:#1a191e;color:#fff;
+    border-bottom:1px solid transparent;
+    transition:background .35s ease,color .35s ease,border-color .35s ease;
   }
+  body.scrolled .topbar{background:#fff;color:var(--navy);border-color:var(--line)}
+  .topbar .brand a{position:relative;display:block;height:60px;width:190px;line-height:0}
+  .topbar .brand img{position:absolute;left:0;top:50%;transform:translateY(-50%);height:52px;width:auto;display:block;transition:opacity .35s ease}
+  .topbar .brand .lg-dark{opacity:0}
+  body.scrolled .topbar .brand .lg-light{opacity:0}
+  body.scrolled .topbar .brand .lg-dark{opacity:1}
   .topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
   .topbar .brand{font-weight:900;font-size:18px;letter-spacing:-.5px}
-  .topbar .brand a{color:#fff;text-decoration:none;display:inline-flex;align-items:center}
+  .topbar .brand a{color:inherit;text-decoration:none}
   .topbar .brand b{color:var(--gold)}
   .logo-mark{
     display:inline-grid;place-items:center;width:27px;height:27px;border-radius:50%;
     background:var(--red);color:#fff;font-weight:900;font-size:15px;margin-right:9px;flex:0 0 auto;
   }
   .topbar .tel{display:flex;align-items:center;gap:8px;font-weight:700}
-  .topbar .tel a{color:#fff;text-decoration:none;font-size:16px}
+  .topbar .tel a{color:inherit;text-decoration:none;font-size:16px}
   .topbar .tel .dot{width:8px;height:8px;border-radius:50%;background:#37d67a;box-shadow:0 0 0 4px rgba(55,214,122,.25)}
 
   /* ===== Category nav ===== */
-  .nav{position:sticky;top:60px;z-index:49;background:#fff;border-bottom:1px solid var(--line);box-shadow:0 2px 10px rgba(30,25,20,.05)}
+  .nav{position:sticky;top:60px;z-index:49;background:#1a191e;border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid transparent;box-shadow:none;transition:background .35s ease,border-color .35s ease,box-shadow .35s ease}
+  body.scrolled .nav{background:#fff;border-top-color:transparent;border-bottom-color:var(--line);box-shadow:0 2px 10px rgba(30,25,20,.05)}
   .nav .wrap{display:flex;gap:6px;overflow-x:auto;height:52px;align-items:center;-ms-overflow-style:none;scrollbar-width:none}
   .nav .wrap::-webkit-scrollbar{display:none}
-  .nav a{flex:0 0 auto;color:var(--navy);text-decoration:none;font-weight:700;font-size:14.5px;padding:8px 14px;border-radius:999px;white-space:nowrap;transition:background .15s,color .15s}
-  .nav a:hover{background:var(--sky)}
-  .nav a.active{background:var(--navy);color:#fff}
-  .nav a.featured{background:var(--red);color:#fff}
-  .nav a.featured:hover{background:#d94a2d}
+  .nav a{flex:0 0 auto;color:#fff;text-decoration:none;font-weight:700;font-size:14.5px;padding:8px 14px;border-radius:999px;white-space:nowrap;transition:background .15s,color .15s}
+  body.scrolled .nav a{color:var(--navy)}
+  .nav a:hover{background:rgba(255,255,255,.12)}
+  body.scrolled .nav a:hover{background:var(--sky)}
+  .nav a.active{background:#fff;color:var(--navy)}
+  body.scrolled .nav a.active{background:var(--navy);color:#fff}
+  .nav a.featured,body.scrolled .nav a.featured{background:var(--red);color:#fff}
+  .nav a.featured:hover,body.scrolled .nav a.featured:hover{background:#d94a2d}
 
   /* ===== Page head (inner pages) ===== */
   .page-head{background:linear-gradient(160deg,var(--navy),var(--navy-2));color:#fff;text-align:center;padding:58px 0 52px}
@@ -104,7 +115,7 @@
   .faq-a{color:var(--muted);font-size:15px;line-height:1.8}
 
   /* ===== 실시간 상담 현황 바 ===== */
-  .live-bar{background:#1f2128;border-bottom:1px solid #33363f;color:#fff}
+  .live-bar{background:#1a191e;border-bottom:1px solid rgba(255,255,255,.06);color:#fff}
   .live-bar .wrap{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;height:40px}
   .live-dot{
     width:8px;height:8px;border-radius:50%;background:#37d67a;flex:0 0 auto;
@@ -233,7 +244,7 @@
 
   /* ===== Hero (사진 배경 + 좌측 딥 그라데이션) ===== */
   .hero{
-    background:var(--charcoal) url('hero.jpg') center right/cover no-repeat;
+    background:#1a191e url('hero-new.jpg') center right/cover no-repeat;
     color:#fff;text-align:left;padding:104px 0 112px;position:relative;overflow:hidden;
   }
   .hero::before{
@@ -241,9 +252,9 @@
     background:linear-gradient(90deg,
       rgba(24,25,30,.90) 0%,
       rgba(24,25,30,.80) 28%,
-      rgba(24,25,30,.35) 52%,
-      rgba(24,25,30,.05) 72%,
-      rgba(24,25,30,0) 100%);
+      rgba(24,25,30,.38) 52%,
+      rgba(24,25,30,.16) 72%,
+      rgba(24,25,30,.20) 100%);
   }
   .hero .wrap{position:relative;z-index:2}
   .hero-copy{max-width:660px}
