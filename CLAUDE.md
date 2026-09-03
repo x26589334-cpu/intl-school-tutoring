@@ -128,7 +128,11 @@ git push
   - (다른 PC가 news121~158까지 대량 작업: 한국 학교 개별글(APIS132·청라달튼123 등 거의 소진)·국제고(동탄156·부산157)·편입158·faq.html·study-*.html 등)
   - news159=IB DP 점수 완전정복, news160=SSAT 완전정복, news161=AP 과목 선택 가이드 (8/30, 커리큘럼/시험 주제형 3편 + 후기 5개). 사진 news60·14·11·13·17·8 재사용. 한국 학교는 거의 소진 → 주제형(IB/AP/SSAT/시험/커리큘럼)으로 전환.
   - ⚠️ 현재 nav에 FAQ 링크 포함, 하단 스크립트 livebar.js+views.js. 새 글은 news-158 양식 참고.
-  - 다음 글은 news-162부터. 📝 **미사용 주제 후보**: TOEFL·IELTS 대비, AP vs IB 선택, 국제학교 여름캠프/서머스쿨, IGCSE 과목선택, 조기유학 적정 시기, 국제학교 학비 비교 / 미사용 EJU 지역(목동·평촌·창원·전주·천안).
+  - (162~167: 영어 레벨테스트·특례입학·TOEFL vs IELTS·YISS·일본 JLPT/EJU·CPM 수학 교재)
+  - news168=**국제학교 입학 준비 총정리(필러글)** — 영어과외 + AP·IB 수학 대비법 (9/3, 집PC). 전형 5단계 / 준비 기간표(D-12개월~입학 후 1학기) / 영어과외 5요소(리딩레벨·아카데믹 어휘 지시어·에세이 구조 TEEL·문법과 인용·스피킹) / 수학 4대 걸림돌(영어용어·show your work·워드프라블럼·계산기) / AP 수학(Precalculus·Calculus AB·BC·Statistics, MCQ·FRQ, 1년 대비 순서) / IB 수학(AA vs AI 비교표, HL·SL, Paper 1~3, IA 약 20%) / AP vs IB 선택 기준 / G6~G12 로드맵 / 학부모 실수 5가지 / FAQ 3문항. 표 2개, 내부링크 16개. 사진 news11(hero)·17·60 재사용. **뉴스 허브 역할이라 신규 글에서 이 글로 인바운드 링크 걸 것**(news-159·161·162에 이미 추가).
+  - 다음 글은 news-169부터. 📝 **미사용 주제 후보**: 국제학교 여름캠프/서머스쿨, IGCSE 과목선택, 조기유학 적정 시기, 국제학교 학비 비교, IB MYP, A-Level 과목선택 / 미사용 EJU 지역(목동·평촌·창원·전주·천안).
+  - 🐛 2026-09-03 수정: `rss.xml` 387행(news-114 제목)의 이스케이프 안 된 `&` 때문에 **피드 전체가 XML 파싱 실패** 상태였음 → `&amp;`로 수정. RSS 항목 추가 시 제목·설명의 `&`는 반드시 `&amp;`로 쓸 것.
+  - ⚠️ 이 저장소는 git 사용자 정보가 로컬 설정임 — 새 PC에서 클론하면 `git config user.name "Applefist"` / `git config user.email "Applefist@users.noreply.github.com"` 먼저 실행(기존 커밋 작성자와 통일).
   - 📌 livebar.js 숫자는 실제값 유지: 후기 103건 / 강사 17명 (후기 추가 시 함께 갱신할 것).
   - ✅ **새 글 필수 SEO 요소(7/13~ 적용)**: canonical + BlogPosting(about/areaServed) + BreadcrumbList + **FAQPage(본문에 보이는 FAQ 3문항 필수)** + 글끼리 내부링크 + index.html의 `.region-hub`에 링크 추가.
   - ⚠️ 사용자 선호: **글자 썸네일 별로임 → 실제 사진 사용할 것.** 집 PC엔 '국제학교 사진' 폴더가 없어 repo 기존 간판없는 캠퍼스 컷 재사용(현재까지 사용한 클린 컷: news11·13·14·17·60). 사무실 PC엔 폴더 있음.
