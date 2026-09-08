@@ -77,6 +77,7 @@
         <div class="sf-search">
           <input id="schoolSearch2" type="text" placeholder="🔍 지역·학교 검색 (예: 서울, 대전외국인학교)" autocomplete="off" oninput="renderSchoolList()" />
           <div id="schoolList2" class="sf-dropdown"></div>
+          <div id="schoolRelated" hidden></div>
         </div>
         <div id="schoolDetail" class="school-detail"></div>
       </div>
@@ -235,6 +236,7 @@
   <!-- KakaoTalk consultation floating button -->
   <a class="kakao-fab" href="https://open.kakao.com/o/svHm7W8b" target="_blank" rel="noopener" aria-label="카카오톡 오픈채팅 상담">💬 카톡 상담</a>
 
+  <script src="search-kit.js"></script>
   <script src="form.js"></script>
   <script>
     // ===== 국제학교 찾기 (한국 / 해외) =====
@@ -609,13 +611,30 @@
       document.getElementById('schoolSearch2').value='';
       document.getElementById('schoolSearch2').placeholder = (t==='kr') ? '🔍 지역·학교 검색 (예: 서울, 대전외국인학교)' : '🔍 국가·학교 검색 (예: 미국, 캐나다, 시드니)';
       document.getElementById('schoolList2').style.display='none';
+      renderRelated('', []);
       var d=document.getElementById('schoolDetail'); d.className='school-detail'; d.innerHTML='';
     }
+    // 띄어쓰기 무시 + 낱말 전부 포함 매칭은 search-kit.js 가 처리
+    var _hay=SearchKit.indexer(function(s){return s.n+'|'+s.r;}, function(s){return s.r+' '+s.n+' '+s.c+' '+(s.j||'');});
+    var _REL=['r','c'];
+    function renderRelated(q, list){
+      var el=document.getElementById('schoolRelated');
+      if(!q){ SearchKit.chips(el, [], null); return; }
+      var found=list.length>0;
+      var items=found
+        ? SearchKit.related(list, q, _REL, {limit:6})
+        : SearchKit.suggest(_list(), _hay, q, _REL, {limit:6});
+      SearchKit.chips(el, items, function(term){
+        var inp=document.getElementById('schoolSearch2');
+        inp.value=term; inp.focus(); renderSchoolList();
+      }, found ? '연관 검색어' : '이렇게 찾아보세요');
+    }
     function renderSchoolList(){
-      var q=document.getElementById('schoolSearch2').value.trim().toLowerCase().replace(/\s/g,'');
+      var q=document.getElementById('schoolSearch2').value.trim();
       var box=document.getElementById('schoolList2');
-      if(!q){ box.style.display='none'; box.innerHTML=''; return; }
-      _filtered=_list().filter(function(s){ return (s.r+' '+s.n+' '+s.c+' '+(s.j||'')).toLowerCase().replace(/\s/g,'').indexOf(q)!==-1; });
+      if(!q){ box.style.display='none'; box.innerHTML=''; renderRelated('', []); return; }
+      _filtered=_list().filter(function(s){ return SearchKit.match(_hay(s), q); });
+      renderRelated(q, _filtered);
       if(!_filtered.length){ box.innerHTML='<div class="none">검색 결과가 없습니다. 카톡·전화로 문의해 주세요!</div>'; box.style.display='block'; return; }
       box.innerHTML=_filtered.map(function(s,i){ return '<a href="#" onclick="showSchool('+i+');return false;"><b style="color:var(--navy)">'+s.r.split(' ')[0]+'</b> · '+s.n+(s.j&&s.j.indexOf('주재원')>=0?' <span style="display:inline-block;background:#fff0ea;color:var(--accent);font-size:11px;font-weight:800;padding:1px 7px;border-radius:999px;vertical-align:middle">주재원</span>':'')+'</a>'; }).join('');
       box.style.display='block';
