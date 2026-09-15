@@ -244,17 +244,17 @@
 
   /* ===== Hero (사진 배경 + 좌측 딥 그라데이션) ===== */
   .hero{
-    background:#1a191e url('hero-new.jpg') center right/cover no-repeat;
+    background:#1a191e url('hero-new.jpg?v=2') center center/cover no-repeat;
     color:#fff;text-align:left;padding:104px 0 112px;position:relative;overflow:hidden;
   }
   .hero::before{
     content:"";position:absolute;inset:0;
     background:linear-gradient(90deg,
-      rgba(24,25,30,.90) 0%,
-      rgba(24,25,30,.80) 28%,
-      rgba(24,25,30,.38) 52%,
-      rgba(24,25,30,.16) 72%,
-      rgba(24,25,30,.20) 100%);
+      rgba(24,25,30,.92) 0%,
+      rgba(24,25,30,.86) 30%,
+      rgba(24,25,30,.50) 55%,
+      rgba(24,25,30,.14) 78%,
+      rgba(24,25,30,.18) 100%);
   }
   .hero .wrap{position:relative;z-index:2}
   .hero-copy{max-width:660px}
@@ -289,7 +289,7 @@
 
   @media (max-width:820px){
     /* 모바일: 글은 위(단색 배경), 사진은 아래에 온전히 — 인물 안 잘리게 */
-    .hero{background:#1a191e url('hero-new.jpg') right bottom/auto 300px no-repeat;padding:64px 0 300px}
+    .hero{background:#1a191e url('hero-new.jpg?v=2') center bottom/auto 300px no-repeat;padding:64px 0 300px}
     .hero::before{
       background:linear-gradient(180deg,#18191e 0%,#18191e 46%,rgba(24,25,30,.55) 58%,rgba(24,25,30,.12) 72%,rgba(24,25,30,0) 100%);
     }
