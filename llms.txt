@@ -23,6 +23,7 @@
 - [국제중·국제고·국제학교·외국인학교 차이와 준비방법](https://internationaledu.co.kr/news-110.html): 학력인정·대학진학(수시/정시/특례/SAT/AP/IB) 총정리
 - [인가 vs 비인가 국제학교 어디로](https://internationaledu.co.kr/news-115.html): 학력인정·검정고시·WASC 인증
 - [대안학교 입학 준비와 국제학교 차이](https://internationaledu.co.kr/news-111.html)
+- [국제학교 EAL(영어 지원 프로그램) 완전정리](https://internationaledu.co.kr/news-206.html): EAL·ESL 배정 기준(생활영어와 학습영어의 차이), 지원 형태 3가지(별도 수업·교실 내 지원·소그룹), 지원을 벗어나는 기준, 읽기 레벨·문단 쓰기·과목 영어 용어 준비법
 - [국제학교 vs 외국인학교 차이 총정리](https://internationaledu.co.kr/guide-school-types.html)
 - [국제학교 학생 한국 대학 진학(특례)](https://internationaledu.co.kr/guide-korea-admission.html)
 - [해외 대학 준비 용어 총정리(IB·AP·A-Level·SAT·IELTS 등)](https://internationaledu.co.kr/guide-overseas-terms.html)
@@ -79,6 +80,8 @@
 - [니시마치 인터내셔널 스쿨(도쿄, 미나토구 모토아자부)](https://internationaledu.co.kr/news-196.html): 1949년 개교 K~G9 소규모 학교(고교 과정 없음), 전교생 일본어 필수, G9 이후 고교 진학 설계와 영어 에세이·SSAT·인터뷰
 - [콘코디아 인터내셔널 스쿨 상하이(푸둥 진차오)](https://internationaledu.co.kr/news-198.html): 1998년 개교 미국식·AP + 응용학습(프로젝트형) 수업·수준별 중국어, 상하이 아메리칸 스쿨과 비교, 루브릭 과제·성찰문·AP 서술형 준비
 - [두바이 컬리지(Dubai College, 알수푸)](https://internationaledu.co.kr/news-199.html): 1978년 개교 영국식 Year 7~13 선발형 비영리 학교(GCSE→A-Level), DAA(미국식)와 비교, 미국식→영국식 학년 환산·진도 공백·지시어별 답안 준비
+- [덜위치 칼리지 상하이(푸둥·푸시 민항구)](https://internationaledu.co.kr/news-204.html): 푸둥 2003년·푸시 2016년 개교로 알려진 영국계 — 영국 국가교육과정→IGCSE→IB 디플로마 하이브리드, Year·Grade 학년 환산, 상하이 미국식 학교(SAS·콘코디아)와 비교
+- [오버시즈 패밀리 스쿨(OFS, 싱가포르 파시르리스)](https://internationaledu.co.kr/news-205.html): 1991년 설립으로 알려진 다국적 국제학교 — IEYC→IPC(G1~5)→IB MYP(G9~10 IGCSE 병행)→IB 디플로마, 커리큘럼 전환 지점별·편입 시기별 준비 우선순위
 - [사이공 사우스 국제학교(SSIS, 호치민)](https://internationaledu.co.kr/news-129.html) · [UNIS 하노이](https://internationaledu.co.kr/news-130.html) · [영국국제학교 호치민(BIS HCMC)](https://internationaledu.co.kr/news-131.html)
 - 지역별: [싱가포르](https://internationaledu.co.kr/news-64.html) · [홍콩](https://internationaledu.co.kr/news-65.html) · [상하이](https://internationaledu.co.kr/news-66.html) · [방콕](https://internationaledu.co.kr/news-82.html) · [도쿄](https://internationaledu.co.kr/news-85.html) · [자카르타](https://internationaledu.co.kr/news-86.html) · [두바이](https://internationaledu.co.kr/news-87.html)
 
