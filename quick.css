@@ -1,0 +1,43 @@
+/* ===== 간편선택 팝업(모달) — index.html·schools.html 공용 ===== */
+.q-modal{display:none;position:fixed;inset:0;z-index:200;background:rgba(10,10,14,.62);backdrop-filter:blur(3px);align-items:center;justify-content:center;padding:20px}
+.q-modal.open{display:flex}
+.quick{position:relative;width:100%;max-width:560px;max-height:calc(100vh - 40px);overflow-y:auto;background:#211f26;border:1px solid rgba(255,255,255,.14);border-radius:18px;padding:22px 22px 20px;box-shadow:0 30px 80px rgba(0,0,0,.55)}
+.q-close{position:absolute;top:10px;right:12px;background:none;border:none;color:#8c8f99;font-size:22px;line-height:1;cursor:pointer;font-family:inherit;padding:6px}
+.q-close:hover{color:#fff}
+.q-open-btn{display:inline-flex;align-items:center;gap:8px;margin-top:18px;background:rgba(245,181,61,.12);border:1px solid rgba(245,181,61,.45);color:#f5b53d;font-family:inherit;font-weight:800;font-size:14px;padding:11px 20px;border-radius:999px;cursor:pointer;transition:all .15s}
+.q-open-btn:hover{background:rgba(245,181,61,.22);transform:translateY(-1px)}
+.q-fab{position:fixed;left:18px;bottom:18px;z-index:60;background:#211f26;border:1px solid rgba(245,181,61,.55);color:#f5b53d;font-family:inherit;font-weight:800;font-size:13.5px;padding:12px 18px;border-radius:999px;cursor:pointer;box-shadow:0 8px 24px rgba(0,0,0,.35);transition:all .15s}
+.q-fab:hover{transform:translateY(-2px);background:#2a2830}
+.quick .q-step{display:none}
+.quick .q-step.on{display:block}
+.q-title{font-weight:900;font-size:17px;color:#fff;margin-bottom:13px}
+.q-title small{display:block;font-weight:500;font-size:12.5px;color:#b8bac2;margin-top:3px}
+.q-tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.q-tiles button{font-family:inherit;cursor:pointer;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);color:#fff;font-weight:700;font-size:13.5px;padding:13px 6px;border-radius:12px;transition:border-color .15s,background .15s,transform .15s;line-height:1.35}
+.q-tiles button:hover{border-color:#ef5a3c;background:rgba(239,90,60,.14);transform:translateY(-1px)}
+.q-tiles button b{display:block;font-size:19px;margin-bottom:5px}
+.q-tiles button:last-child{grid-column:1/-1}
+.q-etc{margin-top:11px;background:none;border:none;color:#9a9da8;font-size:12.5px;cursor:pointer;font-family:inherit;text-decoration:underline;text-underline-offset:3px;padding:2px}
+.q-etc:hover{color:#f5b53d}
+.q-back{background:none;border:none;color:#9a9da8;font-size:12.5px;cursor:pointer;font-family:inherit;padding:0;margin-bottom:9px}
+.q-back:hover{color:#fff}
+.q-chosen{font-weight:900;color:#f5b53d;font-size:15px;margin-bottom:3px}
+.q-hint{color:#b8bac2;font-size:12.5px;margin-bottom:12px}
+.q-grades{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:11px}
+.q-grades button{font-family:inherit;cursor:pointer;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);color:#dfe0e5;font-size:12.5px;font-weight:700;padding:7px 12px;border-radius:999px;transition:all .15s}
+.q-grades button.sel{background:#ef5a3c;border-color:#ef5a3c;color:#fff}
+.quick input,.quick textarea{width:100%;box-sizing:border-box;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);border-radius:10px;color:#fff;font-family:inherit;font-size:14px;padding:11px 13px;margin-bottom:8px}
+.quick input::placeholder,.quick textarea::placeholder{color:#8c8f99}
+.quick textarea{resize:none;height:58px}
+.quick input:focus,.quick textarea:focus{outline:none;border-color:#f5b53d}
+.q-row2{display:flex;gap:8px}
+.q-submit{width:100%;font-family:inherit;cursor:pointer;background:#ef5a3c;border:none;color:#fff;font-weight:900;font-size:15.5px;padding:14px;border-radius:12px;margin-top:3px;transition:transform .15s,box-shadow .2s}
+.q-submit:hover{transform:translateY(-1px);box-shadow:0 10px 22px rgba(239,90,60,.4)}
+.q-done{text-align:center;padding:26px 8px}
+.q-done b{display:block;color:#fff;font-size:17px;margin-bottom:7px}
+.q-done p{color:#b8bac2;font-size:13.5px;line-height:1.7;margin:0}
+.q-links{margin-top:16px;padding-top:14px;border-top:1px solid rgba(255,255,255,.12)}
+.q-links .q-lt{font-size:12.5px;color:#9a9da8;margin-bottom:9px}
+.q-links a{display:inline-block;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.18);color:#fff;font-size:12.5px;font-weight:700;text-decoration:none;padding:8px 13px;border-radius:999px;margin:0 5px 6px 0;transition:all .15s}
+.q-links a:hover{border-color:#f5b53d;color:#f5b53d}
+@media (max-width:640px){.q-tiles{grid-template-columns:repeat(2,1fr)}.q-fab{bottom:76px}}
