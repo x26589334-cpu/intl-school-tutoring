@@ -32,7 +32,7 @@
         '<input type="tel" id="q_phone" placeholder="연락처 *" autocomplete="tel">'+
       '</div>'+
       '<input type="text" id="q_addr" placeholder="도로명 주소 (해외는 국가·도시만 대략 적어주세요)" autocomplete="street-address">'+
-      '<textarea id="q_memo" placeholder="원하시는 수업이 있다면 적어주세요 (선택)"></textarea>'+
+      '<textarea id="q_memo" placeholder="원하시는 수업이나 궁금한 점을 편하게 적어 주세요 (선택)"></textarea>'+
       '<button type="button" class="q-submit">상담 신청하기</button>'+
     '</div>'+
     '<div class="q-step q-s3">'+
