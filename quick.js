@@ -45,12 +45,12 @@
   var LINKS={
     '에세이 과외':[['국제학교 영어 공부법','news-117.html'],['학부모 후기 보기','reviews.html'],['전문 강사진','index.html#teachers']],
     'SAT 과외':[['SAT 준비 가이드','news-112.html'],['학부모 후기 보기','reviews.html'],['전문 강사진','index.html#teachers']],
-    '수학 과외':[['과목 안내 보기','index.html#subjects'],['학부모 후기 보기','reviews.html'],['관리중인 학교 336곳','schools.html']],
+    '수학 과외':[['과목 안내 보기','index.html#subjects'],['학부모 후기 보기','reviews.html'],['관리중인 학교 358곳','schools.html']],
     '과학 과외':[['과목 안내 보기','index.html#subjects'],['학부모 후기 보기','reviews.html'],['전문 강사진','index.html#teachers']],
     '일상 영어회화':[['과목 안내 보기','index.html#subjects'],['학부모 후기 보기','reviews.html'],['전문 강사진','index.html#teachers']],
-    '주재원 준비':[['해외 학사일정·용어 가이드','guide-overseas-terms.html'],['국가별 준비 안내','study.html'],['관리중인 학교 336곳','schools.html']],
-    '국제학교 입학 준비':[['국내 국제학교 입학 가이드','guide-korea-admission.html'],['학교 유형 총정리','guide-school-types.html'],['관리중인 학교 336곳','schools.html']],
-    '기타':[['자주 묻는 질문','faq.html'],['관리중인 학교 336곳','schools.html'],['학부모 후기 보기','reviews.html']]
+    '주재원 준비':[['해외 학사일정·용어 가이드','guide-overseas-terms.html'],['국가별 준비 안내','study.html'],['관리중인 학교 358곳','schools.html']],
+    '국제학교 입학 준비':[['국내 국제학교 입학 가이드','guide-korea-admission.html'],['학교 유형 총정리','guide-school-types.html'],['관리중인 학교 358곳','schools.html']],
+    '기타':[['자주 묻는 질문','faq.html'],['관리중인 학교 358곳','schools.html'],['학부모 후기 보기','reviews.html']]
   };
 
   function init(){
