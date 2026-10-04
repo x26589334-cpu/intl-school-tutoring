@@ -32,8 +32,12 @@
       ".ch-fab{position:fixed;right:20px;bottom:84px;z-index:70;display:inline-flex;align-items:center;gap:7px;" +
       "background:#1f4fd8;color:#fff;font-family:inherit;font-weight:800;font-size:15px;" +
       "padding:13px 20px;border-radius:999px;border:0;cursor:pointer;white-space:nowrap;" +
-      "box-shadow:0 6px 20px rgba(0,0,0,.22);transition:transform .15s ease}" +
+      "box-shadow:0 6px 20px rgba(0,0,0,.22);transition:transform .15s ease;" +
+      "animation:chPulse 2.2s ease-in-out infinite;animation-delay:1.1s}" +
       ".ch-fab:hover{transform:translateY(-2px)}" +
+      "@keyframes chPulse{" +
+      "0%,100%{box-shadow:0 6px 20px rgba(0,0,0,.22),0 0 0 0 rgba(31,79,216,.55)}" +
+      "50%{box-shadow:0 6px 20px rgba(0,0,0,.22),0 0 0 12px rgba(31,79,216,0)}}" +
       ".ch-fab .ch-badge{display:none;position:absolute;top:-6px;right:-4px;min-width:19px;height:19px;" +
       "background:#e5304c;color:#fff;border-radius:999px;font-size:11px;font-weight:800;" +
       "line-height:19px;text-align:center;padding:0 5px;box-sizing:border-box}" +
