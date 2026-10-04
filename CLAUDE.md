@@ -239,6 +239,12 @@ git push
   - ⚠️ 사용자 선호: **글자 썸네일 별로임 → 실제 사진 사용할 것.** 집 PC엔 '국제학교 사진' 폴더가 없어 repo 기존 간판없는 캠퍼스 컷 재사용(현재까지 사용한 클린 컷: news11·13·14·17·60). 사무실 PC엔 폴더 있음.
   - 📌 **SEO 방향(2026-07-12 지시)**: 노출수 하락 → 미국 무명 공립고 양산 자제. 검색수요 큰 쪽으로 다변화 = ① 주재원 인기도시(싱가포르·홍콩·상하이·도쿄·베트남·두바이) ② 명문 한국 국제학교 개별글(SFS·SIS·YISS·채드윅송도·NLCS제주 등) ③ 지역+국제학교/EJU 과외(로컬 인텐트). 글마다 내용 차별화 필수(템플릿 복붙 지양).
 
+## 채널톡 실시간 상담 (2026-10-04 추가)
+- `channeltalk.js` — 전 288개 페이지 `</body>` 앞에 설치. 플러그인 키 `3c9f01fc-8daa-44fa-adc6-c6a3a7e43d0a`(채널명 "나도 국제학교", 계정 x26589334@gmail.com).
+- **기본 버튼을 안 쓰고 자체 버튼(.ch-fab)** — boot 옵션에 위치 조정이 없어서 기본 버튼이 카톡 버튼(우하단)·모바일 전화 바와 겹침. `hideChannelButtonOnBoot:true` + `customLauncherSelector:'.ch-fab'`.
+- 버튼 배치(우측): 채널톡 bottom 84px(모바일 122px) ↑ 카톡 24px(66px) ↑ 전화 바 0. 좌측은 ⚡간편상담(q-fab). 안 읽은 메시지 빨간 배지(`onBadgeChanged`), 클릭 시 GA4 `channeltalk_open` 이벤트.
+- **새 페이지 만들 때 `</body>` 앞에 `<script src="channeltalk.js" defer></script>` 넣을 것.** 상담 접수 자체는 기존 폼(Apps Script)과 별개 채널 — 채팅은 desk.channel.io 에서 확인.
+
 ## 조회수 카운터 (2026-07-21 추가)
 - `views.js` — 무료 조회수 API(Abacus, https://abacus.jasoncameron.dev, 서버/가입 불필요) 연결. 네임스페이스 `internationaledu-co-kr`.
 - 표시 형식: `👁 1,234`. 화면 요소 `<span class="view-count" data-slug="news-N" data-mode="hit">`.
