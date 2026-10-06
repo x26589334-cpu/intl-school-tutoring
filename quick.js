@@ -15,6 +15,8 @@
         '<button type="button" data-s="SAT 과외" data-h="실전 SAT 전문 강사가 배정됩니다"><b>📝</b>SAT 과외</button>'+
         '<button type="button" data-s="수학 과외" data-h="알지브라·지오메트리·AP 미적분까지 커리큘럼별 배정"><b>📐</b>수학 과외</button>'+
         '<button type="button" data-s="과학 과외" data-h="Biology·Chemistry·Physics 전문 강사 배정"><b>🧪</b>과학 과외</button>'+
+        '<button type="button" data-s="일본 EJU 과외" data-h="일본 대학 진학 EJU(수학·종합·이과)와 JLPT 준비를 안내해 드립니다"><b>🇯🇵</b>일본 EJU 과외</button>'+
+        '<button type="button" data-s="중국어 HSK 과외" data-h="중화권 진학·HSK 급수(3~5급) 대비 중국어 과외를 안내해 드립니다"><b>🇨🇳</b>중국어 HSK 과외</button>'+
         '<button type="button" data-s="일상 영어회화" data-h="원어민급 회화 전문 강사와 1:1 화상·대면 수업"><b>💬</b>일상 영어회화</button>'+
         '<button type="button" data-s="주재원 준비" data-h="출국 전 준비부터 현지 화상수업까지 안내해 드립니다"><b>✈️</b>주재원 준비</button>'+
         '<button type="button" data-s="국제학교 입학 준비" data-h="배치고사·에세이·면접 준비를 안내해 드립니다"><b>🎓</b>국제학교 입학 준비</button>'+
@@ -47,6 +49,8 @@
     'SAT 과외':[['SAT 준비 가이드','news-112.html'],['학부모 후기 보기','reviews.html'],['전문 강사진','index.html#teachers']],
     '수학 과외':[['과목 안내 보기','index.html#subjects'],['학부모 후기 보기','reviews.html'],['관리중인 학교 358곳','schools.html']],
     '과학 과외':[['과목 안내 보기','index.html#subjects'],['학부모 후기 보기','reviews.html'],['전문 강사진','index.html#teachers']],
+    '일본 EJU 과외':[['일본 국제학교·JLPT·EJU 준비','news-166.html'],['일본어 과외·JLPT 가이드','news-246.html'],['학부모 후기 보기','reviews.html']],
+    '중국어 HSK 과외':[['중국어 과외·HSK 급수 가이드','news-245.html'],['관리중인 학교 358곳','schools.html'],['학부모 후기 보기','reviews.html']],
     '일상 영어회화':[['과목 안내 보기','index.html#subjects'],['학부모 후기 보기','reviews.html'],['전문 강사진','index.html#teachers']],
     '주재원 준비':[['해외 학사일정·용어 가이드','guide-overseas-terms.html'],['국가별 준비 안내','study.html'],['관리중인 학교 358곳','schools.html']],
     '국제학교 입학 준비':[['국내 국제학교 입학 가이드','guide-korea-admission.html'],['학교 유형 총정리','guide-school-types.html'],['관리중인 학교 358곳','schools.html']],
