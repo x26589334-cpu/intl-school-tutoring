@@ -1,0 +1,5 @@
+# GitHub Pages(Jekyll) 빌드 설정 — 아래 파일은 사이트에 배포하지 않는다 (주소로 열리지 않음).
+# CLAUDE.md 는 작업 노트라 공개되면 안 된다. (2026-10-07)
+exclude:
+  - CLAUDE.md
+  - _config.yml
