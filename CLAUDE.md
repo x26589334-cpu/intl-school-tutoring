@@ -255,6 +255,9 @@ git push
   - ⚠️ 사용자 선호: **글자 썸네일 별로임 → 실제 사진 사용할 것.** 집 PC엔 '국제학교 사진' 폴더가 없어 repo 기존 간판없는 캠퍼스 컷 재사용(현재까지 사용한 클린 컷: news11·13·14·17·60). 사무실 PC엔 폴더 있음.
   - 📌 **SEO 방향(2026-07-12 지시)**: 노출수 하락 → 미국 무명 공립고 양산 자제. 검색수요 큰 쪽으로 다변화 = ① 주재원 인기도시(싱가포르·홍콩·상하이·도쿄·베트남·두바이) ② 명문 한국 국제학교 개별글(SFS·SIS·YISS·채드윅송도·NLCS제주 등) ③ 지역+국제학교/EJU 과외(로컬 인텐트). 글마다 내용 차별화 필수(템플릿 복붙 지양).
 
+## 배포 제외(_config.yml) — 2026-10-07 추가
+- GitHub Pages 는 저장소 파일을 전부 서빙해서 `internationaledu.co.kr/CLAUDE.md` 가 그대로 열렸음. `_config.yml` 의 Jekyll `exclude` 로 CLAUDE.md 를 배포에서 뺐다(→404). **`.nojekyll` 을 만들면 이 장치가 꺼지니 만들지 말 것.** 공개되면 안 되는 파일을 새로 두면 exclude 목록에 추가.
+
 ## 채널톡 실시간 상담 (2026-10-04 추가)
 - `channeltalk.js` — 전 288개 페이지 `</body>` 앞에 설치. 플러그인 키 `3c9f01fc-8daa-44fa-adc6-c6a3a7e43d0a`(채널명 "나도 국제학교", 계정 x26589334@gmail.com).
 - **기본 버튼을 안 쓰고 자체 버튼(.ch-fab)** — boot 옵션에 위치 조정이 없어서 기본 버튼이 카톡 버튼(우하단)·모바일 전화 바와 겹침. `hideChannelButtonOnBoot:true` + `customLauncherSelector:'.ch-fab'`.
