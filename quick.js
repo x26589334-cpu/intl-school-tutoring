@@ -5,6 +5,9 @@
   var EP = (typeof SHEET_ENDPOINT !== 'undefined' && SHEET_ENDPOINT) ||
     "https://script.google.com/macros/s/AKfycbyK9lsdLYJHtGGgE2pioeAv_VGJ1vrF_HYbAZ3m2cFyF-73VNSl9RjT-B4w_xDG_AR1/exec";
 
+  // 한국 번호 판별(+82·0으로 시작=한국, 그 외 해외)
+  function isKR(p){ var s=(p||'').replace(/[\s().\-]/g,''); if(s.charAt(0)==='+') return /^\+82/.test(s); return /^0\d/.test(s); }
+
   var HTML =
   '<div class="quick" id="quickPick">'+
     '<button type="button" class="q-close" id="quickClose" aria-label="닫기">✕</button>'+
@@ -34,6 +37,7 @@
         '<input type="tel" id="q_phone" placeholder="연락처 *" autocomplete="tel">'+
       '</div>'+
       '<input type="text" id="q_addr" placeholder="도로명 주소 (해외는 국가·도시만 대략 적어주세요)" autocomplete="street-address">'+
+      '<input type="text" id="q_kakao" placeholder="카카오톡 ID (해외 번호는 꼭 적어주세요)" style="display:none">'+
       '<textarea id="q_memo" placeholder="원하시는 수업이나 궁금한 점을 편하게 적어 주세요 (선택)"></textarea>'+
       '<button type="button" class="q-submit">상담 신청하기</button>'+
     '</div>'+
@@ -83,6 +87,10 @@
         if(typeof gtag==='function') gtag('event','quick_pick',{tile:subject});
       });
     });
+    // 해외 번호면 카톡 ID 칸 노출
+    var qPhone=document.getElementById('q_phone'), qKakao=document.getElementById('q_kakao');
+    function toggleKakao(){ qKakao.style.display=(qPhone.value.trim()!=='' && !isKR(qPhone.value))?'':'none'; }
+    qPhone.addEventListener('input',toggleKakao); qPhone.addEventListener('blur',toggleKakao);
     box.querySelector('.q-back').addEventListener('click',function(){show(s1)});
     box.querySelectorAll('.q-grades button').forEach(function(g){
       g.addEventListener('click',function(){
@@ -94,13 +102,16 @@
       var name=document.getElementById('q_name').value.trim();
       var phone=document.getElementById('q_phone').value.trim();
       if(!name||!phone){alert('이름과 연락처를 입력해 주세요.');return;}
+      var kakao=qKakao.value.trim();
+      if(!isKR(phone) && !kakao){ qKakao.style.display=''; qKakao.focus(); alert('한국 번호가 아니면 전화 연락이 어려워요.\n카카오톡 ID를 적어주시면 빠르게 안내해 드립니다.'); return; }
       var addr=document.getElementById('q_addr').value.trim();
       var memo=document.getElementById('q_memo').value.trim();
+      if(kakao) memo='[카톡 ID] '+kakao+(memo?' / '+memo:'');
       if(addr) memo='[주소] '+addr+(memo?' / '+memo:'');
       if(EP){
         var d=new URLSearchParams();
         d.append('name',name);d.append('phone',phone);d.append('grade',grade);
-        d.append('subject',subject);d.append('memo',memo);
+        d.append('subject',subject);d.append('memo',memo);d.append('kakao',kakao);
         d.append('page','간편선택:'+subject+' ('+location.pathname.replace(/^\//,'')+')');
         fetch(EP,{method:'POST',mode:'no-cors',body:d}).catch(function(){});
       }
